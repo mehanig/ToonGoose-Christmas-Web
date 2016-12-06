@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.views import generic
+
+from rest_framework import routers
+from backend import views
+
+router = routers.DefaultRouter()
+router.register(r'goose', views.GooseRollViewSet)
+router.register(r'customer', views.CustomerViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,6 +38,10 @@ urlpatterns = [
         generic.TemplateView.as_view(template_name='main_page.html')),
     url(r'^about/',
         generic.TemplateView.as_view(template_name='about.html')),
+
+    url(r'^api/v1/', include(router.urls)),
+    url(r'^api/v1/email/$', views.create_roll),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$',
         generic.TemplateView.as_view(template_name='main_page.html')),
 ]

@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER mehanig <mehanig@gmail.com>
 
-COPY django/ django/
+COPY app/ app/
 
 RUN apt-get update && apt-get -y install -y python3-pip
 RUN apt-get install -y build-essential
@@ -29,11 +29,11 @@ COPY supervisor-app.conf /etc/supervisor/conf.d/
 
 COPY . /home/docker/code/
 
-COPY django/requirements.txt /home/docker/code/django/
-RUN pip3 install -r /home/docker/code/django/requirements.txt
+COPY app/requirements.txt /home/docker/code/app/
+RUN pip3 install -r /home/docker/code/app/requirements.txt
 
 RUN npm install
-RUN cd django && python3 manage.py migrate
+RUN cd app && python3 manage.py migrate
 
 # in another terminal:
 #mv webpack.local-settings.js.sample webpack.local-settings.js

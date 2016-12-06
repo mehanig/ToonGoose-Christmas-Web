@@ -32,14 +32,7 @@ export default function submissions(state=initialState, action={}) {
       }
       return {...state, selected: new_selected, ready: (new_selected.length === 2)};
   case sampleActions.EMAIL:
-    return {...state, verificated: true };
-    axios.post('/email', {
-      email: "user@example.com"
-    }).then(function (response) {
-      return {...state, verificated: true }
-    }).catch(function (error) {
-      return {...state, verificated: true }
-    });
+      return {...state, verificated: true };
   default:
     return state
   }

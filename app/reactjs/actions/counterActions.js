@@ -6,8 +6,8 @@ export function increaseCounter() {
     return {type: INCREASE}
 }
 
-export function sendEmail() {
-    return {type: EMAIL}
+export function sendEmail(data) {
+    return {type: EMAIL, data}
 }
 
 export function selectGoose(goose_id) {

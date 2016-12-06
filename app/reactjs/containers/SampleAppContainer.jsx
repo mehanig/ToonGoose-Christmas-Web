@@ -1,5 +1,7 @@
 import React from "react"
 import Radium from "radium"
+import ReduxThunk from 'redux-thunk'
+import * as axios from "axios"
 
 import { connect } from "react-redux"
 
@@ -30,7 +32,13 @@ export default class SampleAppContainer extends React.Component {
 
   handleEmail() {
     let {dispatch} = this.props;
-    dispatch(counterActions.sendEmail())
+    axios.post('/email', {
+      email: "user@example.com"
+    }).then(function (response) {
+      dispatch(counterActions.sendEmail({response}));
+    }).catch(function (error) {
+      dispatch(counterActions.sendEmail({error}));
+    });
   }
 
   render() {
@@ -42,11 +50,8 @@ export default class SampleAppContainer extends React.Component {
         <div className="row">
           <div className="col-sm-12">
             <Headline>Sample App!</Headline>
-            <div style={[styles.button]} onClick={() => this.handleClick()}>INCREASE</div>
-            <p style={[styles.counter]}>{counters.clicks}</p>
             <p>{process.env.BASE_API_URL}</p>
-            <div style={[styles.button]} onClick={() => this.handleEmail()}>{ counters.verificated ?  'You are' +
-            ' logged In' : 'You are not logged In' }</div>
+            <div style={[styles.button]} onClick={() => this.handleEmail()}>{ counters.verificated ?  "email sent" : "email NOT sent" }</div>
             <p style={[styles.counter]}>{counters.clicks}</p>
             <p>{process.env.BASE_API_URL}</p>
           </div>
@@ -57,6 +62,9 @@ export default class SampleAppContainer extends React.Component {
             <form action="submit">
                 Enter email to select gift: <input type="text" name="fname"></input>
             </form>
+            <button onClick={() => this.handleEmail()}>
+                Send Email
+            </button>
           </span>
           : <div></div>
         }
