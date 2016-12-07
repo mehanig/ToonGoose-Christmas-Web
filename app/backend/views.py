@@ -24,7 +24,11 @@ class GooseRollViewSet(viewsets.ModelViewSet):
         roll = GooseRoll.objects.get(url=pk)
         if roll:
             serializer = GooseRollSerializer(roll)
-            return Response(serializer.data)
+            serializer.data['prize1'] = "OK"
+            f = serializer.data
+            f['prize1'] = "Залупа за воротник со скидкой 100%"
+            f['prize2'] = "Редкая хуета без скидки!"
+            return Response(f)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     def post(self, request):
@@ -48,7 +52,7 @@ def create_roll(request, format=None):
                 customer.save()
             except IntegrityError:
                 return Response({'reason': 'duplicate'}, status=status.HTTP_400_BAD_REQUEST)
-            url = random.randint(1, 99999999999999999999999999999999999)
+            url = str(random.randint(1, 99999999999999999999999999999999999))
             content = {
                 'url': url,
                 'prize1': 1,
@@ -58,5 +62,6 @@ def create_roll(request, format=None):
             }
             roll = GooseRoll.objects.create(**content)
             roll.save()
-            return Response({'url': url}, status=status.HTTP_201_CREATED)
+            return Response({'url': url},
+                            status=status.HTTP_201_CREATED)
     return Response({}, status=status.HTTP_400_BAD_REQUEST)
