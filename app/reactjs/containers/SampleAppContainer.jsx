@@ -10,6 +10,11 @@ import Headline from "../components/Headline"
 
 import GooseSelector from "./GooseSelector"
 import PrizeSelector from "./PrizeSelector"
+import EmailModal from "./EmailModal"
+import PrizeFeed from "./PrizeFeed"
+
+import 'antd/dist/antd.css';
+import '../app.css';
 
 const styles = {
   button: {
@@ -36,29 +41,9 @@ function validateEmail(email) {
 @Radium
 export default class SampleAppContainer extends React.Component {
 
-  handleEmail() {
-    let {dispatch} = this.props;
-    axios.post('/api/v1/email/', {
-      email: this.state.email
-    }).then(function (response) {
-      dispatch(counterActions.sendEmail({response}));
-    }).catch(function (error) {
-      dispatch(counterActions.sendEmail({error}));
-      alert("Ты че псина, второй приз захотел?")
-    });
-  }
-
   submitPrize() {
     let {counters} = this.props;
     alert("Заебись, вы выйграли: " + counters.prizes[counters.selectedPrize]);
-  }
-
-
-  onEmailChange(email) {
-      this.setState({email: email.target.value});
-      this.setState({isEmailInvalid: validateEmail(this.state.email)});
-      console.log(this.state.email);
-      console.log(this.state.isEmailInvalid);
   }
 
   render() {
@@ -66,29 +51,43 @@ export default class SampleAppContainer extends React.Component {
 
     return (
       <div className="container">
+        <div className="row app-header">
+            <div className="col-24" style={[styles.centerTextContent]}>
+                <h1>Toongoose Christmas</h1>
+            </div>
+        </div>
         <div className="row">
-          <div className="col-sm-12" style={[styles.centerTextContent]}>
-            <h1>Toongoose Christmas</h1>
-            <p>{process.env.BASE_API_URL}</p>
-            <div style={[styles.button]} onClick={() => this.handleEmail()}>{ counters.verificated ?  "email sent" : "email NOT sent" }</div>
+          <div className="col-24" style={[styles.centerTextContent]}>
+            <div>{ counters.verificated ?  "email sent" : "email NOT sent" }</div>
           </div>
         </div>
 
         { counters.ready ?
           <span>
-            Enter email to select gift: <input type="text" onChange={(val) => this.onEmailChange(val)}></input>
-            <button type="button" disabled={!this.state.isEmailInvalid} onClick={() => this.handleEmail()}>
-              Send Email
-            </button>
+            {/*Enter email to select gift: <input type="text" onChange={(val) => this.onEmailChange(val)}></input>*/}
+            <EmailModal visible={true}/>
+            {/*<button type="button" disabled={!this.state.isEmailInvalid} onClick={() => this.handleEmail()}>*/}
+              {/*Send Email*/}
+            {/*</button>*/}
           </span>
           : <div></div>
         }
 
-        { counters.gooseRollId ? <PrizeSelector /> : <GooseSelector /> }
+        { counters.gooseRollId ?
+            <PrizeSelector />
+            :
+            <GooseSelector />
+        }
         { counters.selectedPrize !== false ?
             (<button onClick={() => this.submitPrize()}>Get Prize</button>)
             : (<div></div>)
         }
+        <div className="row">
+            <div className="col-24" style={[styles.centerTextContent]}>
+                <h1>Who's got what already:</h1>
+                <PrizeFeed />
+            </div>
+        </div>
       </div>
     )
   }

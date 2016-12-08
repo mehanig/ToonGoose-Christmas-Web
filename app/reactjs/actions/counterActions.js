@@ -11,6 +11,7 @@ export function sendEmail(data) {
         return {type: EMAIL, data: data.response.data}
     }
     if (data.error) {
+        console.log(data.error);
         return {type: ERROR, data: data.error.response.data}
     }
 }

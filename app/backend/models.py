@@ -10,10 +10,17 @@ class Customer(models.Model):
 
 class GooseRoll(models.Model):
     url = models.CharField(max_length=32, db_index=True)
-    selected = models.IntegerField(blank=True, null=True)
+    selected = models.IntegerField(blank=True, default=0)
     prize1 = models.IntegerField()
     prize2 = models.IntegerField()
-    customer = models.ForeignKey(Customer)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+    @property
+    def email_hidden(self):
+        try:
+            return "@".join(list(map(lambda x: x[0] + '***' + x[-1], self.customer.email.split('@'))))
+        except Exception as e:
+            return "***"
 
     def __str__(self):
         return 'GooseRoll: ' + str(self.url)

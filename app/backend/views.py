@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from django.db import IntegrityError
 
 from backend.models import GooseRoll, Customer
-from .serializers import GooseRollSerializer, CustomerSerializer
+from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer
 
 
 class GooseRollViewSet(viewsets.ModelViewSet):
@@ -16,8 +16,8 @@ class GooseRollViewSet(viewsets.ModelViewSet):
     queryset = GooseRoll.objects.all()
 
     def list(self, request):
-        queryset = GooseRoll.objects.all()
-        serializer = GooseRollSerializer(queryset, many=True, context={'request': request})
+        queryset = GooseRoll.objects.all().exclude(selected=0).order_by('-id')[:5]
+        serializer = GooseSecureSerializer(queryset, many=True, context={'request': request})
         return Response(data=serializer.data)
 
     def retrieve(self, request, pk=None):
@@ -52,7 +52,7 @@ def create_roll(request, format=None):
                 customer.save()
             except IntegrityError:
                 return Response({'reason': 'duplicate'}, status=status.HTTP_400_BAD_REQUEST)
-            url = str(random.randint(1, 99999999999999999999999999999999999))
+            url = str(random.randint(1, 9999999999999999999999999999999))
             content = {
                 'url': url,
                 'prize1': 1,

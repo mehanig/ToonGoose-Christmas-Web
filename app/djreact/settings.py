@@ -112,7 +112,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
         # 'rest_framework.parsers.JSONParser',
     ],
-    'EXCEPTION_HANDLER': 'djreact.utils.custom_exception_handler'
+    'EXCEPTION_HANDLER': 'djreact.utils.custom_exception_handler',
 }
 
 
