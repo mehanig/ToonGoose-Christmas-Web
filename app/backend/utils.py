@@ -50,5 +50,5 @@ class PrizePool(metaclass=Singleton):
         try:
             self.pool[self.pool.index(item)] = random.choice(unlimited)
         except ValueError:
-            print("No index: " + str(item_index) + str(item))
+            print("No index: " + str(item))
         print(self.pool_stat())
