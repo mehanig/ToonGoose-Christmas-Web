@@ -5,6 +5,7 @@ import * as axios from "axios"
 
 import { message } from 'antd';
 import TweenOne from 'rc-tween-one';
+import QueueAnim from 'rc-queue-anim';
 
 
 @connect(state => ({
@@ -20,7 +21,7 @@ export default class PrizeSelector extends React.Component {
 
   componentWillMount() {
       let {dispatch, counters} = this.props;
-      axios.get("/api/v1/goose/" + counters.gooseRollId).then(function (response) {
+      axios.get("/api/v1/goose/" + counters.gooseRollId + '/').then(function (response) {
           dispatch(counterActions.rollReceived({response}));
       }).catch(function (error) {
           dispatch(counterActions.rollReceived({error}));
@@ -36,11 +37,13 @@ export default class PrizeSelector extends React.Component {
     let {counters} = this.props;
 
     return (
-        <div style={{display: "inline", cursor: 'pointer'} }>
-            <TweenOne animation={{x:100}}>
-            <h1 style={(counters.selectedPrize === 0) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(0)}> Prize1: {counters.prizes[0]} </h1>
-            <h1 style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> Prize2: {counters.prizes[1]} </h1>
-            </TweenOne>
+        <div className="prize-selector__main" style={{display: "inline", cursor: 'pointer'} }>
+            <QueueAnim>
+                <div key="0">
+                    <h1 style={(counters.selectedPrize === 0) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(0)}> Prize1: {counters.prizes[0]} </h1>
+                    <h1 style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> Prize2: {counters.prizes[1]} </h1>
+                </div>
+            </QueueAnim>
         </div>
     )
   }

@@ -12,7 +12,7 @@ class GooseRollSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GooseRoll
-        fields = ('url', 'prize1', 'selected', 'prize2', 'customer')
+        fields = ('url', 'prize1', 'selected', 'prize2', 'customer', 'prize1_descr', 'prize2_descr')
 
 
 class GooseSecureSerializer(serializers.ModelSerializer):

@@ -142,3 +142,38 @@ try:
     from .local_settings import *  # flake8: noqa
 except ImportError:
     pass
+
+
+PRIZES_LIST_RU = [
+    "50% скидка на ролик (до 60 секунд)",
+    "30% скидка на ролик (до 60 секунд)",
+    "10% скидка на ролик (до 60 секунд)",
+    "Бесплатный саунд-дизайн",
+    "Бесплатная музыка",
+    "Бесплатный сценарий",
+    "Бесплатная раскадровка"
+]
+
+PRIZES_LIST_EN = [
+    "50% skidka na video (up to 60 sec)",
+    "30% skidka na video (up to 60 sec)",
+    "10% skidka na video (up to 60 sec)",
+    "Free саунд-дизайн",
+    "Free музыка",
+    "Free сценарий",
+    "Free раскадровка"
+]
+
+from collections import namedtuple
+PrizeProb = namedtuple('PrizeProb', ['prob', 'limit'])
+
+# (percent of roll in dataset of 100, limit in database)
+PRIZES_PROB = [
+    PrizeProb(1, 1),
+    PrizeProb(3, 3),
+    PrizeProb(10, None),
+    PrizeProb(5, 2),
+    PrizeProb(5, 1),
+    PrizeProb(10, 10),
+    PrizeProb(15, None)
+]

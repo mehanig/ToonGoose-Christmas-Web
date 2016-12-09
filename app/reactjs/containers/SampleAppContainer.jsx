@@ -13,6 +13,8 @@ import PrizeSelector from "./PrizeSelector"
 import EmailModal from "./EmailModal"
 import PrizeFeed from "./PrizeFeed"
 
+import { Button } from 'antd';
+
 import 'antd/dist/antd.css';
 import '../app.css';
 
@@ -41,8 +43,17 @@ function validateEmail(email) {
 @Radium
 export default class SampleAppContainer extends React.Component {
 
+   constructor(props) {
+     super(props);
+     this.state = {
+        loading: false,
+        iconLoading: false
+     }
+   }
+
   submitPrize() {
     let {counters} = this.props;
+    this.setState({loading: true, iconLoading: true});
     alert("Заебись, вы выйграли: " + counters.prizes[counters.selectedPrize]);
   }
 
@@ -55,11 +66,6 @@ export default class SampleAppContainer extends React.Component {
             <div className="col-24" style={[styles.centerTextContent]}>
                 <h1>Toongoose Christmas</h1>
             </div>
-        </div>
-        <div className="row">
-          <div className="col-24" style={[styles.centerTextContent]}>
-            <div>{ counters.verificated ?  "email sent" : "email NOT sent" }</div>
-          </div>
         </div>
 
         { counters.ready ?
@@ -78,8 +84,12 @@ export default class SampleAppContainer extends React.Component {
             :
             <GooseSelector />
         }
-        { counters.selectedPrize !== false ?
-            (<button onClick={() => this.submitPrize()}>Get Prize</button>)
+        { (counters.selectedPrize !== false) || counters.gooseRollId ?
+            <div className="select-prize__button">
+              <Button type="primary" icon="rocket" disabled={!(counters.selectedPrize !== false)} loading={this.state.iconLoading} onClick={() => this.submitPrize()}>
+                Get Prize!
+              </Button>
+             </div>
             : (<div></div>)
         }
         <div className="row">

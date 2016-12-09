@@ -3,6 +3,15 @@
    color: black;
 }
 
+.select-prize__button {
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+}
+
+.prize-selector__main {
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+}
 
 .gooses {
     margin: 20px 0 20px 0;
