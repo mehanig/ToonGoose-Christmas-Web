@@ -36,5 +36,12 @@ class GooseRoll(models.Model):
         except Exception as e:
             return "***"
 
+    @property
+    def selected_descr(self):
+        if self.selected == 1:
+            return self.prize1_descr
+        if self.selected == 2:
+            return self.prize2_descr
+
     def __str__(self):
         return 'GooseRoll: ' + str(self.url)

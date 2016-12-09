@@ -12,8 +12,9 @@ import GooseSelector from "./GooseSelector"
 import PrizeSelector from "./PrizeSelector"
 import EmailModal from "./EmailModal"
 import PrizeFeed from "./PrizeFeed"
+import PrizePool from "./PrizePool"
 
-import { Button } from 'antd';
+import { Button, Row, Col } from 'antd';
 
 import 'antd/dist/antd.css';
 import '../app.css';
@@ -28,6 +29,7 @@ const styles = {
   },
   centerTextContent: {
     textAlign: 'center',
+    background: '#AAA'
   }
 };
 
@@ -61,13 +63,18 @@ export default class SampleAppContainer extends React.Component {
     let {counters} = this.props;
 
     return (
-      <div className="container">
+      <div className="container_main">
         <div className="row app-header">
             <div className="col-24" style={[styles.centerTextContent]}>
                 <h1>Toongoose Christmas</h1>
             </div>
         </div>
-
+        <Row>
+        <Col span={4}>
+            Prizes:
+            <PrizePool />
+        </Col>
+        <Col span={20}>
         { counters.ready ?
           <span>
             {/*Enter email to select gift: <input type="text" onChange={(val) => this.onEmailChange(val)}></input>*/}
@@ -98,6 +105,8 @@ export default class SampleAppContainer extends React.Component {
                 <PrizeFeed />
             </div>
         </div>
+        </Col>
+        </Row>
       </div>
     )
   }

@@ -1,4 +1,7 @@
 import random
+from collections import Counter
+
+from .utils import PrizePool
 
 from rest_framework import status
 from rest_framework import viewsets
@@ -40,6 +43,17 @@ class CustomerViewSet(viewsets.ModelViewSet):
     serializer_class = CustomerSerializer
 
 
+@api_view(['GET'])
+def prize_pool_list(request, format=None):
+
+    parser_classes = (JSONParser,)
+
+    if request.method == 'GET':
+        c = Counter(PrizePool().pool_stat())
+        data = sorted([k for k in c], key=lambda x: x[1])
+        return Response(data, status=status.HTTP_200_OK)
+
+
 @api_view(['POST'])
 def create_roll(request, format=None):
 
@@ -62,6 +76,7 @@ def create_roll(request, format=None):
             }
             roll = GooseRoll.objects.create(**content)
             roll.save()
+            print("saving!")
             return Response({'url': url},
                             status=status.HTTP_201_CREATED)
     return Response({}, status=status.HTTP_400_BAD_REQUEST)

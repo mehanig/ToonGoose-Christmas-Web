@@ -1,6 +1,9 @@
 from backend.models import GooseRoll, Customer
 from rest_framework import serializers
 
+# connect signals at this point
+from .signals import *
+
 
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -19,4 +22,4 @@ class GooseSecureSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GooseRoll
-        fields = ('selected', 'email_hidden')
+        fields = ('selected_descr', 'email_hidden')

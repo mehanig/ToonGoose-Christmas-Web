@@ -41,6 +41,7 @@ urlpatterns = [
 
     url(r'^api/v1/', include(router.urls)),
     url(r'^api/v1/email/$', views.create_roll),
+    url(r'^api/v1/prize-pool/$', views.prize_pool_list),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$',
         generic.TemplateView.as_view(template_name='main_page.html')),

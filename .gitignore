@@ -132,3 +132,5 @@ ENV/
 /django/node_modules
 .DS_Store
 db.sqlite3
+
+secret_key.txt

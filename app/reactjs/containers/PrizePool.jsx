@@ -12,7 +12,7 @@ import QueueAnim from 'rc-queue-anim';
   counters: state.counters,
 }))
 
-export default class PrizeFeed extends React.Component {
+export default class PrizePool extends React.Component {
 
   constructor(props) {
      super(props);
@@ -28,7 +28,7 @@ export default class PrizeFeed extends React.Component {
 
   componentWillMount() {
       let {dispatch, counters} = this.props;
-      axios.get("/api/v1/goose/").then(function (response) {
+      axios.get("/api/v1/prize-pool/").then(function (response) {
           console.log(response.data);
           this.setState({feed: response.data})
       }.bind(this)).catch(function (error) {
@@ -42,9 +42,9 @@ export default class PrizeFeed extends React.Component {
 
     return (
         <div className="prize-feed__main" style={{display: "inline", cursor: 'pointer'}}>
-            <QueueAnim delay={300}>
-                {this.state.feed.map(function(prize, index){
-                    return <div key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
+            <QueueAnim>
+                {this.state.feed.map(function(prize){
+                    return <div onClick={() => this.handleClick(0)}> {prize[0]}: {prize[1]} </div>
                 })}
             </QueueAnim>
         </div>
