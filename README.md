@@ -18,3 +18,15 @@ but ready for implementing apps with react.
 
 
 Deployment ready for Amazon EBS
+
+
+####Local run with uWSGI
+```
+$VIRTUAL_ENV/bin/uwsgi --ini uwsgi.ini:local --virtualenv $VIRTUAL_ENV
+```
+
+
+####Email problems?
+```
+python manage.py get_ses_statistics
+```

@@ -1,0 +1,1 @@
+0 0 * * * ls -l >/Users/mehanig/CODE/toongooseNY/app/stdout.log 2>/Users/mehanig/CODE/toongooseNY/app/stderr.log

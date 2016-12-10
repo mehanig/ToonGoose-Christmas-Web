@@ -46,3 +46,5 @@ urlpatterns = [
     url(r'^$',
         generic.TemplateView.as_view(template_name='main_page.html')),
 ]
+
+urlpatterns += (url(r'^admin/django-ses/', include('django_ses.urls')),)

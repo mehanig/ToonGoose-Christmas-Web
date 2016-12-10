@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'post_office',
+    'django_ses',
     'backend',
     'rest_framework',
     'webpack_loader',
@@ -129,6 +131,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# Email
+# EMAIL_BACKEND = 'post_office.EmailBackend'
+#
+# POST_OFFICE = {
+#     'LOG_LEVEL': 2,  # Log all
+#     'BACKENDS': {
+#         'default': 'django_ses.SESBackend',
+#     }
+# }
+# EMAIL_BACKEND = 'django_ses.SESBackend'
+#
+
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = 'key-c82d31b31478acb965d6a95612c44526_invalidKey'
+MAILGUN_SERVER_NAME = 'aeupdates.com'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

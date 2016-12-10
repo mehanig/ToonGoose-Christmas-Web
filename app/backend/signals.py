@@ -17,7 +17,7 @@ def send_email_with_gift(sender, instance, *args, **kwargs):
     send_mail(
         'Subject here',
         'Here is the message.',
-        'from@example.com',
+        'mehanig@gmail.com',
         ['mehanig@gmail.com'],
         fail_silently=False,
     )

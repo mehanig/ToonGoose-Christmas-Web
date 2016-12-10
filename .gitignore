@@ -133,4 +133,5 @@ ENV/
 .DS_Store
 db.sqlite3
 
-secret_key.txt
+/app/djreact/secret_key.txt
+/app/djreact/smtp_aws_key.txt

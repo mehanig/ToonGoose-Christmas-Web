@@ -7,9 +7,9 @@ def custom_exception_handler(exc, context):
     response = exception_handler(exc, context)
 
     # Now add the HTTP status code to the response. And hide detail
-    if response is not None:
-        response.data['status_code'] = response.status_code
-        response.data['detail'] = 'No details shared due to policy restrictions. Sorry.'
+    # if response is not None:
+    #     response.data['status_code'] = response.status_code
+    #     response.data['detail'] = 'No details shared due to policy restrictions. Sorry.'
     return response
 
 
