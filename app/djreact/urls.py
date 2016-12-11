@@ -26,19 +26,7 @@ router.register(r'customer', views.CustomerViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^app2/',
-        generic.TemplateView.as_view(template_name='sample_app2.html')),
-    url(r'^app1/',
-        generic.TemplateView.as_view(template_name='sample_app.html')),
-    url(r'^gifgun/',
-        generic.TemplateView.as_view(template_name='gifgun.html')),
-    url(r'^origami/',
-        generic.TemplateView.as_view(template_name='main_page.html')),
-    url(r'^goodparents/',
-        generic.TemplateView.as_view(template_name='main_page.html')),
-    url(r'^about/',
-        generic.TemplateView.as_view(template_name='about.html')),
-
+    url(r'^app1/', generic.TemplateView.as_view(template_name='sample_app.html')),
     url(r'^api/v1/', include(router.urls)),
     url(r'^api/v1/email/$', views.create_roll),
     url(r'^api/v1/prize-pool/$', views.prize_pool_list),
