@@ -17,7 +17,17 @@ serves few static pages for now
 but ready for implementing apps with react.
 
 
-Deployment ready for Amazon EBS
+####Deployment to Google Compute Engine:
+
+Whole app is one Docker container, push it to google private registry
+`docker build -t toongoseny .`
+tag it
+`docker tag toongoseny gcr.io/tongoseny/tongosenyimage`
+push it
+`gcloud docker -- push gcr.io/toongoseny/toongosenyimage`
+don't set any permissons, it's private by default
+
+Now create  Google Compute Engine using `startup-script.sh`
 
 
 ####Local run with uWSGI
@@ -30,3 +40,4 @@ $VIRTUAL_ENV/bin/uwsgi --ini uwsgi.ini:local --virtualenv $VIRTUAL_ENV
 ```
 python manage.py get_ses_statistics
 ```
+
