@@ -4,6 +4,9 @@ export const GOOSE_SELECTED = "GOOSE_SELECTED";
 export const ROLL = "ROLL";
 export const ERROR_IN_ROLL = "ERROR_IN_ROLL";
 export const PRIZE_SELECTED = "PRIZE_SELECTED";
+export const PRIZE_APPROVED = "PRIZE_APPROVED";
+export const PRIZE_APPROVED_ERROR = "PRIZE_APPROVED_ERROR";
+
 
 export function sendEmail(data) {
     console.log(data);
@@ -14,6 +17,17 @@ export function sendEmail(data) {
         console.log(data.error);
         return {type: ERROR, data: data.error.response.data}
     }
+}
+
+export function selectedPrize(data) {
+  if (data.response){
+    const prize_id = data.response.data.prize_id;
+    return {type: PRIZE_APPROVED, prize_id}
+  }
+  if (data.error) {
+    console.log(data.error);
+    return {type: PRIZE_APPROVED_ERROR, data: data.error.response.data}
+  }
 }
 
 export function selectGoose(goose_id) {

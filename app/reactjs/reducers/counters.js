@@ -3,7 +3,6 @@ import * as axios from "axios"
 
 const initialState = {
   clicks: 0,
-  verificated: false,
   selected: [],
   ready: false,
   selectGoose: false,
@@ -28,15 +27,17 @@ export default function submissions(state=initialState, action={}) {
       }
       return {...state, selected: new_selected, ready: (new_selected.length === 2)};
   case Actions.EMAIL:
-      return {...state, verificated: true, ready: false, gooseRollId: String(action.data.url)};
+      return {...state, ready: false, gooseRollId: String(action.data.url)};
   case Actions.ERROR:
       return {...state, errorMsg: action.data};
   case Actions.ROLL:
-      return {...state, userThinking: true, prizes:[action.data.prize1, action.data.prize2]};
+      return {...state, userThinking: true, prizes:[action.data.prize1_descr, action.data.prize2_descr]};
   case Actions.ERROR_IN_ROLL:
       return {...state, errorWithRoll: action.data};
   case Actions.PRIZE_SELECTED:
       return {...state, selectedPrize: action.prize_id};
+  case Actions.PRIZE_APPROVED:
+      return {...state, selectedPrizeApproved: action.prize_id};
   default:
     return state
   }

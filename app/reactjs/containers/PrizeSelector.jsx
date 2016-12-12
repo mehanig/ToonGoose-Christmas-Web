@@ -40,8 +40,8 @@ export default class PrizeSelector extends React.Component {
         <div className="prize-selector__main" style={{display: "inline", cursor: 'pointer'} }>
             <QueueAnim>
                 <div key="0">
-                    <h1 style={(counters.selectedPrize === 0) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(0)}> Prize1: {counters.prizes[0]} </h1>
-                    <h1 style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> Prize2: {counters.prizes[1]} </h1>
+                    <h1 style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> Prize1: {counters.prizes[0]} </h1>
+                    <h1 style={(counters.selectedPrize === 2) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(2)}> Prize2: {counters.prizes[1]} </h1>
                 </div>
             </QueueAnim>
         </div>

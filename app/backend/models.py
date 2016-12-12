@@ -30,6 +30,14 @@ class GooseRoll(models.Model):
         return settings.PRIZES_LIST_RU[int(self.prize2)]
 
     @property
+    def gift_descr(self):
+        if self.selected == 1:
+            return self.prize1_descr
+        if self.selected == 2:
+            return self.prize2_descr
+        return "No prize"
+
+    @property
     def email_hidden(self):
         try:
             return "@".join(list(map(lambda x: x[0] + '***' + x[-1], self.customer.email.split('@'))))

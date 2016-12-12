@@ -134,8 +134,7 @@ ENV/
 app/database/db.sqlite3
 
 /app/djreact/secret_key.txt
-/app/djreact/smtp_aws_key.txt
-
+/app/djreact/secret_email_key.txt
 app.sock
 
 /app/djreact/static/bundles

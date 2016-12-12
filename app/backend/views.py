@@ -9,8 +9,8 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from django.db import IntegrityError
-
-from backend.models import GooseRoll, Customer
+from django.conf import settings
+from backend.models import GooseRoll, Customer, PrizePoolItem
 from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer
 
 
@@ -27,10 +27,7 @@ class GooseRollViewSet(viewsets.ModelViewSet):
         roll = GooseRoll.objects.get(url=pk)
         if roll:
             serializer = GooseRollSerializer(roll)
-            serializer.data['prize1'] = "OK"
             f = serializer.data
-            f['prize1'] = "Залупа за воротник со скидкой 100%"
-            f['prize2'] = "Редкая хуета без скидки!"
             return Response(f)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -67,10 +64,11 @@ def create_roll(request, format=None):
             except IntegrityError:
                 return Response({'reason': 'duplicate'}, status=status.HTTP_400_BAD_REQUEST)
             url = str(random.randint(1, 9999999999999999999999999999999))
+            prize1, prize2 = PrizePool().get_two_unique_items()
             content = {
                 'url': url,
-                'prize1': 1,
-                'prize2': 2,
+                'prize1': prize1,
+                'prize2': prize2,
                 'selected': 0,
                 'customer': customer
             }
@@ -79,4 +77,26 @@ def create_roll(request, format=None):
             print("saving!")
             return Response({'url': url},
                             status=status.HTTP_201_CREATED)
+    return Response({}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+def selected_prize(request, format=None):
+
+    parser_classes = (JSONParser,)
+
+    if request.method == 'POST' and 'id' in request.data:
+        print(request.data)
+        roll = GooseRoll.objects.filter(url=request.data['id']).first()
+        if roll:
+            roll.selected = request.data['selected']
+            roll.save()
+            print(roll.selected)
+            ### TODO: It's possible to fail here, and roll will be saved! It's important to keep GooseRoll table
+            ### TODO: in sync with PrizeRollItem! If this fails, rollback GooseRoll item!
+            if roll.selected == 1:
+                PrizePoolItem.objects.create(prize=roll.prize1, description=settings.PRIZES_LIST_RU[roll.prize1]).save()
+            elif roll.selected == 2:
+                PrizePoolItem.objects.create(prize=roll.prize2, description=settings.PRIZES_LIST_RU[roll.prize2]).save()
+            return Response({'selected': request.data['selected']}, status=status.HTTP_202_ACCEPTED)
     return Response({}, status=status.HTTP_400_BAD_REQUEST)

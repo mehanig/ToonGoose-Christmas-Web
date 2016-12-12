@@ -16,6 +16,7 @@ class Singleton(type):
 
 # LIMITED TO 100
 # Singleton for displaying stats
+# Array of ints
 class PrizePool(metaclass=Singleton):
 
     SIZE = 100
@@ -35,6 +36,18 @@ class PrizePool(metaclass=Singleton):
         while len(self.pool) < self.SIZE:
             self.pool.append(random.choice(unlimited))
         random.shuffle(self.pool)
+
+    def get_two_random_ids(self):
+        int1, int2 = random.sample(range(0, self.SIZE), 2)
+        return self.pool[int1], self.pool[int2]
+
+    def get_two_unique_items(self):
+        p1, p2 = self.get_two_random_ids()
+        while p1 == p2:
+            p1, p2 = self.get_two_random_ids()
+            if len(Counter(self.pool).keys()) == 1:
+                return p1, p2
+        return p1, p2
 
     def pool_stat(self):
         c = Counter(self.pool)

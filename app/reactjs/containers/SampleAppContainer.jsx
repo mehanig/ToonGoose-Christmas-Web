@@ -54,9 +54,28 @@ export default class SampleAppContainer extends React.Component {
    }
 
   submitPrize() {
-    let {counters} = this.props;
+    let { dispatch, counters } = this.props;
     this.setState({loading: true, iconLoading: true});
-    alert("Заебись, вы выйграли: " + counters.prizes[counters.selectedPrize]);
+    axios.post('/api/v1/selected_prize/', {
+      id: counters.gooseRollId,
+      selected: counters.selectedPrize
+    }).then(function (response) {
+      this.setState({
+        visible: false,
+        confirmLoading: false,
+        finalScreen: true,
+        finalPrize: response.data.selected
+      });
+      dispatch(counterActions.selectedPrize({response}));
+    }.bind(this)).catch(function (error) {
+      dispatch(counterActions.selectedPrize({error}));
+      this.setState({
+        visible: true,
+        confirmLoading: false,
+        prize_approved_error: true
+      });
+    }.bind(this));
+    alert("Заебись, вы выйграли: " + counters.prizes[counters.selectedPrize-1]);
   }
 
   render() {
@@ -74,38 +93,45 @@ export default class SampleAppContainer extends React.Component {
             Prizes:
             <PrizePool />
         </Col>
-        <Col span={20}>
-        { counters.ready ?
-          <span>
+        {  this.state.finalPrize ?
+          <Col span={20}>
+            Congratulation! You win.
+          </Col>
+          :
+          <Col span={20}>
+            { counters.ready ?
+              <span>
             {/*Enter email to select gift: <input type="text" onChange={(val) => this.onEmailChange(val)}></input>*/}
-            <EmailModal visible={true}/>
-            {/*<button type="button" disabled={!this.state.isEmailInvalid} onClick={() => this.handleEmail()}>*/}
-              {/*Send Email*/}
-            {/*</button>*/}
+                <EmailModal visible={true}/>
+                {/*<button type="button" disabled={!this.state.isEmailInvalid} onClick={() => this.handleEmail()}>*/}
+                {/*Send Email*/}
+                {/*</button>*/}
           </span>
-          : <div></div>
-        }
+              : <div></div>
+            }
 
-        { counters.gooseRollId ?
-            <PrizeSelector />
-            :
-            <GooseSelector />
-        }
-        { (counters.selectedPrize !== false) || counters.gooseRollId ?
-            <div className="select-prize__button">
-              <Button type="primary" icon="rocket" disabled={!(counters.selectedPrize !== false)} loading={this.state.iconLoading} onClick={() => this.submitPrize()}>
-                Get Prize!
-              </Button>
-             </div>
-            : (<div></div>)
-        }
-        <div className="row">
-            <div className="col-24" style={[styles.centerTextContent]}>
+            { counters.gooseRollId ?
+              <PrizeSelector />
+              :
+              <GooseSelector />
+            }
+            { (counters.selectedPrize !== false) || counters.gooseRollId ?
+              <div className="select-prize__button">
+                <Button type="primary" icon="rocket" disabled={!(counters.selectedPrize !== false)}
+                        loading={this.state.iconLoading} onClick={() => this.submitPrize()}>
+                  Get Prize!
+                </Button>
+              </div>
+              : (<div></div>)
+            }
+            <div className="row">
+              <div className="col-24" style={[styles.centerTextContent]}>
                 <h1>Who's got what already:</h1>
                 <PrizeFeed />
+              </div>
             </div>
-        </div>
-        </Col>
+          </Col>
+        }
         </Row>
       </div>
     )

@@ -145,7 +145,9 @@ USE_TZ = True
 #
 
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = 'key-c82d31b31478acb965d6a95612c44526_invalidKey'
+with open(BASE_DIR + '/djreact/secret_email_key.txt') as f:
+    MAILGUN_ACCESS_KEY = f.read().strip()
+
 MAILGUN_SERVER_NAME = 'aeupdates.com'
 
 # Static files (CSS, JavaScript, Images)
