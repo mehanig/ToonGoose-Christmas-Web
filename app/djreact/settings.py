@@ -133,18 +133,18 @@ USE_TZ = True
 
 
 # Email
-# EMAIL_BACKEND = 'post_office.EmailBackend'
+EMAIL_BACKEND = 'post_office.EmailBackend'
 #
-# POST_OFFICE = {
-#     'LOG_LEVEL': 2,  # Log all
-#     'BACKENDS': {
-#         'default': 'django_ses.SESBackend',
-#     }
-# }
+POST_OFFICE = {
+    'LOG_LEVEL': 2,  # Log all
+    'BACKENDS': {
+        'default': 'django_mailgun.MailgunBackend',
+    }
+}
 # EMAIL_BACKEND = 'django_ses.SESBackend'
 #
 
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+# EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 with open(BASE_DIR + '/djreact/secret_email_key.txt') as f:
     MAILGUN_ACCESS_KEY = f.read().strip()
 

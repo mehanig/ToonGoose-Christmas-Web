@@ -5,6 +5,7 @@ const initialState = {
   clicks: 0,
   selected: [],
   ready: false,
+  twoGoosesSelected: false,
   selectGoose: false,
   errorMsg: false,
   gooseRollId: false,
@@ -20,14 +21,18 @@ export default function submissions(state=initialState, action={}) {
       if (state.selected.includes(action.goose_id)) {
         new_selected = state.selected.filter((id) =>  {return id != action.goose_id});
       } else if (state.selected.length === 2) {
-        return {...state, ready: true}
+        return {...state, twoGoosesSelected: true}
       } else {
         new_selected = state.selected.slice();
         new_selected.push(action.goose_id);
       }
-      return {...state, selected: new_selected, ready: (new_selected.length === 2)};
+      return {...state, selected: new_selected, twoGoosesSelected: (new_selected.length === 2)};
+  case Actions.ASK_FOR_EMAIL:
+      return {...state, ready: true};
   case Actions.EMAIL:
       return {...state, ready: false, gooseRollId: String(action.data.url)};
+  case Actions.EMAIL_CANCEL_CLICKED:
+      return {...state, ready: false };
   case Actions.ERROR:
       return {...state, errorMsg: action.data};
   case Actions.ROLL:

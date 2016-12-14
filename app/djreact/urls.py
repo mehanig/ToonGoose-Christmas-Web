@@ -26,14 +26,11 @@ router.register(r'customer', views.CustomerViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^app1/', generic.TemplateView.as_view(template_name='sample_app.html')),
     url(r'^api/v1/', include(router.urls)),
     url(r'^api/v1/email/$', views.create_roll),
     url(r'^api/v1/selected_prize/$', views.selected_prize),
     url(r'^api/v1/prize-pool/$', views.prize_pool_list),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$',
-        generic.TemplateView.as_view(template_name='main_page.html')),
+    url(r'^$', generic.TemplateView.as_view(template_name='main_page.html')),
 ]
 
 urlpatterns += (url(r'^admin/django-ses/', include('django_ses.urls')),)

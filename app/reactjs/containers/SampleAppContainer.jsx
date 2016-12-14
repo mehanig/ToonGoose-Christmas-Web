@@ -13,6 +13,8 @@ import PrizeSelector from "./PrizeSelector"
 import EmailModal from "./EmailModal"
 import PrizeFeed from "./PrizeFeed"
 import PrizePool from "./PrizePool"
+import CongratsPage from "./CongratsPage"
+import PopupFirstHelp from "./PopupFirstHelp"
 
 import { Button, Row, Col } from 'antd';
 
@@ -53,6 +55,18 @@ export default class SampleAppContainer extends React.Component {
      }
    }
 
+
+  componentDidMount() {
+    if (localStorage) {
+      const is_firsts_visit = localStorage.getItem('itsmyfirsttime') !== 'false';
+      if (is_firsts_visit) {
+        localStorage.setItem('itsmyfirsttime', 'true');
+        // this.setState({is_first_visit: true});
+        window.setTimeout(() => { this.setState({is_first_visit: true})}, 2000);
+      }
+    }
+  }
+
   submitPrize() {
     let { dispatch, counters } = this.props;
     this.setState({loading: true, iconLoading: true});
@@ -75,7 +89,6 @@ export default class SampleAppContainer extends React.Component {
         prize_approved_error: true
       });
     }.bind(this));
-    alert("Заебись, вы выйграли: " + counters.prizes[counters.selectedPrize-1]);
   }
 
   render() {
@@ -95,7 +108,7 @@ export default class SampleAppContainer extends React.Component {
         </Col>
         {  this.state.finalPrize ?
           <Col span={20}>
-            Congratulation! You win.
+            <CongratsPage />
           </Col>
           :
           <Col span={20}>
@@ -133,6 +146,7 @@ export default class SampleAppContainer extends React.Component {
           </Col>
         }
         </Row>
+        { this.state.is_first_visit ? <PopupFirstHelp /> : <span></span> }
       </div>
     )
   }

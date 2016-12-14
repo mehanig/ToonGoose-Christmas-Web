@@ -2,9 +2,8 @@ import React from "react"
 import { connect } from "react-redux"
 import * as counterActions from "../actions/counterActions"
 
-import TweenOne from 'rc-tween-one';
-var TweenOneGroup = TweenOne.TweenOneGroup;
 import QueueAnim from 'rc-queue-anim';
+import { Button } from 'antd';
 
 @connect(state => ({
   counters: state.counters,
@@ -14,6 +13,11 @@ export default class GooseSelector extends React.Component {
   handleClick(goose_id) {
     let {dispatch} = this.props;
     dispatch(counterActions.selectGoose(goose_id))
+  }
+
+  askForEmail() {
+    let {dispatch} = this.props;
+    dispatch(counterActions.askForEmail())
   }
 
   render() {
@@ -51,6 +55,13 @@ export default class GooseSelector extends React.Component {
                     <span style={(counters.selected.includes(11)) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(11)}> Goose11 </span>
                     <span style={(counters.selected.includes(12)) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(12)}> Goose12 </span>
                     {/*</TweenOne>*/}
+                </div>
+                <div key="4">
+                  <div className="two__gooses-button">
+                    <Button type="primary" icon="smile-o" disabled={!(counters.twoGoosesSelected)} onClick={() => this.askForEmail()}>
+                      Get Prize!
+                    </Button>
+                  </div>
                 </div>
                 </QueueAnim>
             </div>

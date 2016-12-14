@@ -60,14 +60,14 @@ export default class EmailModal extends React.Component {
   handleEmailInput(e) {
       this.setState({email: e.target.value, email_duplicate: false, displayEmailInvalidMsg: false});
       this.setState({isEmailValid: this.validateEmail(e.target.value)});
-      console.log(e.target.value);
   }
 
   handleCancel() {
-    console.log('Clicked cancel button');
+    let {dispatch} = this.props;
     this.setState({
       visible: false,
     });
+    dispatch(counterActions.emailCancelClicked());
   }
   render() {
     return (

@@ -4,7 +4,6 @@ import * as counterActions from "../actions/counterActions"
 import * as axios from "axios"
 
 import { message } from 'antd';
-import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
 
 

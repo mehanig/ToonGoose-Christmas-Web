@@ -5,7 +5,9 @@ export const ROLL = "ROLL";
 export const ERROR_IN_ROLL = "ERROR_IN_ROLL";
 export const PRIZE_SELECTED = "PRIZE_SELECTED";
 export const PRIZE_APPROVED = "PRIZE_APPROVED";
+export const ASK_FOR_EMAIL = "ASK_FOR_EMAIL";
 export const PRIZE_APPROVED_ERROR = "PRIZE_APPROVED_ERROR";
+export const EMAIL_CANCEL_CLICKED = "EMAIL_CANCEL_CLICKED";
 
 
 export function sendEmail(data) {
@@ -17,6 +19,14 @@ export function sendEmail(data) {
         console.log(data.error);
         return {type: ERROR, data: data.error.response.data}
     }
+}
+
+export function askForEmail() {
+  return {type: ASK_FOR_EMAIL}
+}
+
+export function emailCancelClicked() {
+  return {type: EMAIL_CANCEL_CLICKED}
 }
 
 export function selectedPrize(data) {
