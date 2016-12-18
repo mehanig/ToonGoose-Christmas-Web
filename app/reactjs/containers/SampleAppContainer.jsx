@@ -29,10 +29,6 @@ const styles = {
     color: "blue",
     fontSize: "20px",
   },
-  centerTextContent: {
-    textAlign: 'center',
-    background: '#AAA'
-  }
 };
 
 function validateEmail(email) {
@@ -97,21 +93,20 @@ export default class SampleAppContainer extends React.Component {
     return (
       <div className="container_main">
         <div className="row app-header">
-            <div className="col-24" style={[styles.centerTextContent]}>
-                <h1>Toongoose Christmas</h1>
+            <div className="col-24 app-logo-header">
             </div>
         </div>
         <Row>
-        <Col span={4}>
-            Prizes:
-            <PrizePool />
-        </Col>
+        {/*<Col span={4}>*/}
+            {/*Prizes:*/}
+            {/*<PrizePool />*/}
+        {/*</Col>*/}
         {  this.state.finalPrize ?
-          <Col span={20}>
+          <Col span={24}>
             <CongratsPage />
           </Col>
           :
-          <Col span={20}>
+          <Col span={24}>
             { counters.ready ?
               <span>
             {/*Enter email to select gift: <input type="text" onChange={(val) => this.onEmailChange(val)}></input>*/}

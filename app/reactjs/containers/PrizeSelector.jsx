@@ -37,6 +37,10 @@ export default class PrizeSelector extends React.Component {
 
     return (
         <div className="prize-selector__main" style={{display: "inline", cursor: 'pointer'} }>
+            <div className="prize-selector__description">
+                Here’s what the geese has given you this year!<br />
+                Chose a gift you wish to keep.
+            </div>
             <QueueAnim>
                 <div key="0">
                     <h1 style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> Prize1: {counters.prizes[0]} </h1>
