@@ -127,7 +127,7 @@ export default class SampleAppContainer extends React.Component {
         }
         </Row>
         <Row>
-          <Col span={16} offset={4}>
+          <Col span={20} offset={2}>
             <PrizeFeed />
           </Col>
         </Row>

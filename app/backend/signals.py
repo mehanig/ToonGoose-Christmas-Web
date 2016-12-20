@@ -19,9 +19,9 @@ def send_email_with_gift(sender, instance, *args, **kwargs):
         if instance.selected in [1, 2] and instance.customer.email:
             print('email_sending')
             send_mail(
-                'Email from ToonGoose',
+                'Gift from ToonGoose',
                 'Congratulations, {email}, you have gift from ToonGoose: {gift}'.format(email=instance.customer.email, gift=instance.gift_descr),
-                'mehanig@gmail.com',
+                'hello@toongoose.com',
                 [instance.customer.email],
                 fail_silently=False,
             )

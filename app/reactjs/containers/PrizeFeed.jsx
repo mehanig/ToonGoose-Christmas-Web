@@ -42,21 +42,27 @@ export default class PrizeFeed extends React.Component {
 
     return (
         <div className="prize-feed__main">
+            <Row type="flex" justify="center">
+                <div className="logo__Image"></div>
+            </Row>
             <Row>
                 <Col span={6} offset={3}>
                     <QueueAnim delay={300}>
-                        {this.state.feed.map(function(prize, index){
-                            return <div key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
+                        {this.state.feed.filter((el, index) => {if (!(index % 2)) return el;}).map(function(prize, index){
+                            return <div className="prize-feed__item" key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
                         })}
                     </QueueAnim>
                 </Col>
                 <Col span={6} offset={6}>
                     <QueueAnim delay={300}>
-                        {this.state.feed.map(function(prize, index){
-                            return <div key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
+                        {this.state.feed.filter((el, index) => {if (index % 2) return el;}).map(function(prize, index){
+                            return <div className="prize-feed__item" key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
                         })}
                     </QueueAnim>
                 </Col>
+            </Row>
+            <Row type="flex" justify="center">
+                <div className="prize-feed__logo-image"></div>
             </Row>
         </div>
     )

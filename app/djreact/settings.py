@@ -148,7 +148,7 @@ POST_OFFICE = {
 with open(BASE_DIR + '/djreact/secret_email_key.txt') as f:
     MAILGUN_ACCESS_KEY = f.read().strip()
 
-MAILGUN_SERVER_NAME = 'aeupdates.com'
+MAILGUN_SERVER_NAME = 'toongoose.com'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
