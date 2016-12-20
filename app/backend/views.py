@@ -12,6 +12,7 @@ from django.db import IntegrityError
 from django.conf import settings
 from backend.models import GooseRoll, Customer, PrizePoolItem
 from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer
+from .const import GOOSE_WINNERS_LIST_SIZE
 
 
 class GooseRollViewSet(viewsets.ModelViewSet):
@@ -19,7 +20,7 @@ class GooseRollViewSet(viewsets.ModelViewSet):
     queryset = GooseRoll.objects.all()
 
     def list(self, request):
-        queryset = GooseRoll.objects.all().exclude(selected=0).order_by('-id')[:5]
+        queryset = GooseRoll.objects.all().exclude(selected=0).order_by('-id')[:GOOSE_WINNERS_LIST_SIZE]
         serializer = GooseSecureSerializer(queryset, many=True, context={'request': request})
         return Response(data=serializer.data)
 

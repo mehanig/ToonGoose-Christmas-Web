@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post_office',
-    'django_ses',
+    'anymail',
     'backend',
     'rest_framework',
     'webpack_loader',
@@ -131,22 +131,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Email
-EMAIL_BACKEND = 'post_office.EmailBackend'
-#
-POST_OFFICE = {
-    'LOG_LEVEL': 2,  # Log all
-    'BACKENDS': {
-        'default': 'django_mailgun.MailgunBackend',
-    }
-}
-# EMAIL_BACKEND = 'django_ses.SESBackend'
-#
-
-# EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 with open(BASE_DIR + '/djreact/secret_email_key.txt') as f:
     MAILGUN_ACCESS_KEY = f.read().strip()
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": MAILGUN_ACCESS_KEY,
+    "MAILGUN_SENDER_DOMAIN": 'toongoose.com'
+}
+
+EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"
+
+DEFAULT_FROM_EMAIL = "hello@toongoose.com"
 
 MAILGUN_SERVER_NAME = 'toongoose.com'
 

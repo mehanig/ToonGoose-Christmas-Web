@@ -94,6 +94,10 @@ export default class SampleAppContainer extends React.Component {
       <div className="container_main">
         <div className="row app-header">
             <div className="col-24 app-logo-header">
+                <Row>
+                    <Col offset={1} span={1} className='header__icon-toongoose' onClick={() => alert('LOL')}>
+                    </Col>
+                </Row>
             </div>
         </div>
         <Row>

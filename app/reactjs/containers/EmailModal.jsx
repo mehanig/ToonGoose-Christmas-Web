@@ -40,9 +40,11 @@ export default class EmailModal extends React.Component {
             email: this.state.email
         }).then(function (response) {
             this.setState({
-                visible: false,
+                visible: true,
                 confirmLoading: false,
             });
+            // To close modal (update css propzerties)
+            dispatch(counterActions.emailCancelClicked());
             dispatch(counterActions.sendEmail({response}));
         }.bind(this)).catch(function (error) {
             dispatch(counterActions.sendEmail({error}));
@@ -79,6 +81,8 @@ export default class EmailModal extends React.Component {
           confirmLoading={this.state.confirmLoading}
           onCancel={() => this.handleCancel()}
           width={380}
+          okText="OK"
+          cancelText="Cancel"
         >
         {this.state.displayEmailInvalidMsg ?
             <Alert

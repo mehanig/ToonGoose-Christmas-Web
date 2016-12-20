@@ -1,8 +1,9 @@
 .prize-feed__main {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
     color: white;
-    padding: 90px 0 30px 0;
+    padding: 20px 0 0 0;
     background: #454545;
+    margin-top: 30px;
 }
 
 .select-prize__button {
@@ -39,13 +40,73 @@
     background-repeat: no-repeat;
 }
 
+.header__icon-toongoose {
+    min-height: 25px;
+    max-height: 25px;
+    margin-top: 35px;
+    cursor: pointer;
+    background-position:50% 50%;  /* Sets reference point to scale from */
+    background-image: url('/static/img/T_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .prize-feed__logo-image {
     height: 135px;
     width: 135px;
     background-position:50% 50%;  /* Sets reference point to scale from */
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('/static/img/Goose2.png');
+    background-image: url('/static/img/T_logo_large.png');
+}
+
+.prize-feed__user-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 0 10px 0;
+}
+
+.prize-feed__user-item-header {
+    font-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.prize-feed__descr {
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.prize-feed__ribbon-image {
+    position: relative;
+    top: -38px;
+    min-height: 40px;
+    min-width: 450px;
+    margin-bottom: -30px;
+    background-position:50% 50%;  /* Sets reference point to scale from */
+    background-size: contain;
+    background-image: url('/static/img/Ribbon_List_emails.png');
+    background-repeat: no-repeat;
+}
+
+.congrats__header-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    margin: 20px;
+}
+
+.congrats__header-text-2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    margin: 20px;
 }
 
 .goose-icon {
@@ -166,6 +227,15 @@
     background-repeat: no-repeat;
 }
 
+.goose__was-send-image {
+    position: relative;
+    min-height: 100px;
+    margin: 20px 0 20px;
+    background-position:50% 50%;  /* Sets reference point to scale from */
+    background-size: contain;
+    background-image: url('/static/img/Letter.png');
+    background-repeat: no-repeat;
+}
 .prize-selector__description {
     font-size: 1.5em;
 }
@@ -179,6 +249,10 @@
     margin-top: -30px;
 }
 
+.large-icon {
+    width: 250px;
+    height: 250px;
+}
 
 /* The Modal (background) */
 .modal__goose {

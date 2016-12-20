@@ -1,24 +1,33 @@
 import React from "react"
 
 import QueueAnim from 'rc-queue-anim';
-import ShareButtons from "./ShareButtons"
+import ShareWithFriends from "./ShareWithFriends"
+import { Row, Col, Form } from 'antd';
 
 export default class CongratsPage extends React.Component {
 
   render() {
-
+    const WrappedDynamicFieldSet = Form.create()(ShareWithFriends);
     return (
       <div className="congrats">
-        <div style={{"font-size": "50px", cursor: "pointer", "text-align": "center"}} className="row">
-          <div style={{display: "inline"} }>
+          <Row>
+            <Col span={20} offset={2}>
             <QueueAnim>
               <div key="0">
-                <span> Horray! Good choice! </span>
-                <ShareButtons />
+                <Row className="congrats__header-text"><Col span={12}>
+                    <span> Horray! Good choice! <br />An email with your Goose was send.</span>
+                    <div className="goose__was-send-image"></div>
+                </Col></Row>
+                <Row className="congrats__header-text-2"><Col span={12}>
+                    <span>Share this site with 3 friends and get one extra gift. </span>
+                </Col></Row>
+                <Row><Col span={14} offset={6}>
+                    <WrappedDynamicFieldSet />
+                </Col></Row>
               </div>
             </QueueAnim>
-          </div>
-        </div>
+            </Col>
+          </Row>
       </div>
     )
   }

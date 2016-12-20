@@ -32,5 +32,3 @@ urlpatterns = [
     url(r'^api/v1/prize-pool/$', views.prize_pool_list),
     url(r'^$', generic.TemplateView.as_view(template_name='main_page.html')),
 ]
-
-urlpatterns += (url(r'^admin/django-ses/', include('django_ses.urls')),)

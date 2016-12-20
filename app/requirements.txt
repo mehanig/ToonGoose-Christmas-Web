@@ -7,4 +7,4 @@ django-filter==1.0.1
 django-post-office==2.0.8
 boto==2.44.0
 django-ses==0.8.1
-django-mailgun==0.9.1
+django-anymail==0.6.1

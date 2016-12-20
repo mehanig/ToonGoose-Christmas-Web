@@ -34,8 +34,8 @@ export default class PrizeSelector extends React.Component {
 
   render() {
     let {counters} = this.props;
-    let goose1class = `goose-icon goose-icon__num-${counters.selected[0]}`;
-    let goose2class = `goose-icon goose-icon__num-${counters.selected[1]}`;
+    let goose1class = `goose-icon goose-icon__num-${counters.selected[0]} large-icon`;
+    let goose2class = `goose-icon goose-icon__num-${counters.selected[1]} large-icon`;
 
     return (
         <div className="prize-selector__main" style={{display: "inline", cursor: 'pointer'} }>
