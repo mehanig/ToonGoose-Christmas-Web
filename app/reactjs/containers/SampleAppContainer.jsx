@@ -97,10 +97,6 @@ export default class SampleAppContainer extends React.Component {
             </div>
         </div>
         <Row>
-        {/*<Col span={4}>*/}
-            {/*Prizes:*/}
-            {/*<PrizePool />*/}
-        {/*</Col>*/}
         {  this.state.finalPrize ?
           <Col span={24}>
             <CongratsPage />
@@ -108,16 +104,10 @@ export default class SampleAppContainer extends React.Component {
           :
           <Col span={24}>
             { counters.ready ?
-              <span>
-            {/*Enter email to select gift: <input type="text" onChange={(val) => this.onEmailChange(val)}></input>*/}
-                <EmailModal visible={true}/>
-                {/*<button type="button" disabled={!this.state.isEmailInvalid} onClick={() => this.handleEmail()}>*/}
-                {/*Send Email*/}
-                {/*</button>*/}
-          </span>
-              : <div></div>
+              <span> <EmailModal visible={true}/></span>
+              :
+              <div></div>
             }
-
             { counters.gooseRollId ?
               <PrizeSelector />
               :
@@ -130,16 +120,16 @@ export default class SampleAppContainer extends React.Component {
                   Get Prize!
                 </Button>
               </div>
-              : (<div></div>)
+              :
+              <div></div>
             }
-            <div className="row">
-              <div className="col-24" style={[styles.centerTextContent]}>
-                <h1>Who's got what already:</h1>
-                <PrizeFeed />
-              </div>
-            </div>
           </Col>
         }
+        </Row>
+        <Row>
+          <Col span={16} offset={4}>
+            <PrizeFeed />
+          </Col>
         </Row>
         { this.state.is_first_visit ? <PopupFirstHelp /> : <span></span> }
       </div>

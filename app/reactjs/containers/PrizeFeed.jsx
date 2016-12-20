@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import * as counterActions from "../actions/counterActions"
 import * as axios from "axios"
 
-import { message } from 'antd';
+import { message, Row, Col } from 'antd';
 import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
 
@@ -41,12 +41,23 @@ export default class PrizeFeed extends React.Component {
     let {counters} = this.props;
 
     return (
-        <div className="prize-feed__main" style={{display: "inline", cursor: 'pointer'}}>
-            <QueueAnim delay={300}>
-                {this.state.feed.map(function(prize, index){
-                    return <div key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
-                })}
-            </QueueAnim>
+        <div className="prize-feed__main">
+            <Row>
+                <Col span={6} offset={3}>
+                    <QueueAnim delay={300}>
+                        {this.state.feed.map(function(prize, index){
+                            return <div key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
+                        })}
+                    </QueueAnim>
+                </Col>
+                <Col span={6} offset={6}>
+                    <QueueAnim delay={300}>
+                        {this.state.feed.map(function(prize, index){
+                            return <div key={index} onClick={() => this.handleClick(0)}> {prize.email_hidden}: {prize.selected_descr} </div>
+                        })}
+                    </QueueAnim>
+                </Col>
+            </Row>
         </div>
     )
   }
