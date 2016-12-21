@@ -57,7 +57,7 @@ export default class PrizeFeed extends React.Component {
                         {this.state.feed.filter((el, index) => {if (!(index % 2)) return el;}).map(function(prize, index){
                             return <div className="prize-feed__user-item" key={index} onClick={() => this.handleClick(0)}>
                                 <div className="prize-feed__user-item-header"><b>{prize.email_hidden}</b></div>
-                                <div>{prize.selected_descr}</div>
+                                <div className="prize-feed__user-item-descr">{prize.selected_descr}</div>
                             </div>
                         })}
                     </QueueAnim>
@@ -67,7 +67,7 @@ export default class PrizeFeed extends React.Component {
                         {this.state.feed.filter((el, index) => {if (index % 2) return el;}).map(function(prize, index){
                             return <div className="prize-feed__user-item" key={index} onClick={() => this.handleClick(0)}>
                                 <div className="prize-feed__user-item-header"><b>{prize.email_hidden}</b></div>
-                                <div>{prize.selected_descr}</div>
+                                <div className="prize-feed__user-item-descr">{prize.selected_descr}</div>
                             </div>
                         })}
                     </QueueAnim>

@@ -16,6 +16,13 @@ node server.js
 serves few static pages for now
 but ready for implementing apps with react.
 
+####Build webpack for production
+```
+./node_modules/webpack/bin/webpack.js --config webpack.prod.config.js
+```
+
+####Live Reload? 
+Change settings in `local_settings.py`
 
 ####Deployment to Google Compute Engine:
 

@@ -87,6 +87,16 @@ export default class SampleAppContainer extends React.Component {
     }.bind(this));
   }
 
+  goToonGoose() {
+    const url = "http://toongoose.com";
+    window.open(url, "_blank");
+  }
+
+  shareFb() {
+    const url = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fchristmas.toongoose.com%2F&amp;src=sdkpreparse";
+    window.open(url, "share_fb_toongoose","status=1,scrollbars=1, width=450,height=400" );
+  }
+
   render() {
     let {counters} = this.props;
 
@@ -94,8 +104,11 @@ export default class SampleAppContainer extends React.Component {
       <div className="container_main">
         <div className="row app-header">
             <div className="col-24 app-logo-header">
-                <Row>
-                    <Col offset={1} span={1} className='header__icon-toongoose' onClick={() => alert('LOL')}>
+                <Row style={{display: 'flex'}}>
+                    <Col offset={1} span={1} className='header__icon-toongoose' onClick={() => this.goToonGoose()}>
+                    </Col>
+                    <Col offset={20} span={1} className=''>
+                        <div className="fb-share-button-my" data-href="http://christmas.toongoose.com" onClick={() => this.shareFb()}></div>
                     </Col>
                 </Row>
             </div>
@@ -119,7 +132,7 @@ export default class SampleAppContainer extends React.Component {
             }
             { (counters.selectedPrize !== false) || counters.gooseRollId ?
               <div className="select-prize__button">
-                <Button type="primary" icon="rocket" disabled={!(counters.selectedPrize !== false)}
+                <Button type="primary" icon="rocket" style={{ width: '30%', 'font-size': '16px' }} disabled={!(counters.selectedPrize !== false)}
                         loading={this.state.iconLoading} onClick={() => this.submitPrize()}>
                   Get Prize!
                 </Button>

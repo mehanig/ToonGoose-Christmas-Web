@@ -86,6 +86,12 @@ DATABASES = {
     }
 }
 
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'BUNDLE_DIR_NAME': 'bundles/',
+#         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prod.json'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -160,23 +166,23 @@ except ImportError:
 
 
 PRIZES_LIST_RU = [
-    "50% скидка на ролик (до 60 секунд)",
-    "30% скидка на ролик (до 60 секунд)",
-    "10% скидка на ролик (до 60 секунд)",
-    "Бесплатный саунд-дизайн",
-    "Бесплатная музыка",
-    "Бесплатный сценарий",
-    "Бесплатная раскадровка"
+    "50% off the cost of the next animated video at ToonGoose  (for 90 sec video)",
+    "30% off the cost of the next animated video at ToonGoose (for 90 sec video)",
+    "10% off the cost of the next animated video at ToonGoose (for 90 sec video)",
+    "free sound design for your next animated video at ToonGoose (for 90 sec video)",
+    "free unique music track for your next animated video at ToonGoose (for 90 sec video)",
+    "free script (2 options) for your next animated video at ToonGoose (for 90 sec video)",
+    "free storyboard for your next animated video at ToonGoose (for 90 sec video)"
 ]
 
 PRIZES_LIST_EN = [
-    "50% skidka na video (up to 60 sec)",
-    "30% skidka na video (up to 60 sec)",
-    "10% skidka na video (up to 60 sec)",
-    "Free саунд-дизайн",
-    "Free музыка",
-    "Free сценарий",
-    "Free раскадровка"
+    "50% off the cost of the next animated video at ToonGoose  (for 90 sec video)",
+    "30% off the cost of the next animated video at ToonGoose (for 90 sec video)",
+    "10% off the cost of the next animated video at ToonGoose (for 90 sec video)",
+    "free sound design for your next animated video at ToonGoose (for 90 sec video)",
+    "free unique music track for your next animated video at ToonGoose (for 90 sec video)",
+    "free script (2 options) for your next animated video at ToonGoose (for 90 sec video)",
+    "free storyboard for your next animated video at ToonGoose (for 90 sec video)"
 ]
 
 from collections import namedtuple
@@ -184,11 +190,11 @@ PrizeProb = namedtuple('PrizeProb', ['prob', 'limit'])
 
 # (percent of roll in dataset of 100, limit in database)
 PRIZES_PROB = [
-    PrizeProb(1, 1),
-    PrizeProb(3, 3),
-    PrizeProb(10, None),
-    PrizeProb(5, 2),
-    PrizeProb(5, 1),
-    PrizeProb(10, 10),
-    PrizeProb(15, None)
+    PrizeProb(1, 5),
+    PrizeProb(5, 20),
+    PrizeProb(20, None),
+    PrizeProb(10, 5),
+    PrizeProb(15, 4),
+    PrizeProb(14, 20),
+    PrizeProb(35, None)
 ]

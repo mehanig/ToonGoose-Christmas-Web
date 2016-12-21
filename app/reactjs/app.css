@@ -51,6 +51,17 @@
     background-repeat: no-repeat;
 }
 
+.fb-share-button-my {
+    min-height: 20px;
+    max-height: 20px;
+    margin-top: 48px;
+    cursor: pointer;
+    background-position:50% 50%;  /* Sets reference point to scale from */
+    background-image: url('/static/img/fbicon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .prize-feed__logo-image {
     height: 135px;
     width: 135px;
@@ -72,6 +83,10 @@
     font-size: 20px;
     padding-bottom: 5px;
     padding-top: 10px;
+}
+
+.prize-feed__user-item-descr {
+    text-align: center;
 }
 
 .prize-feed__descr {
@@ -111,9 +126,9 @@
 
 .goose-icon {
     display: inline-block;
-    height: 135px;
-    width: 135px;
-    margin: 15px 15px 15px 15px;
+    height: 150px;
+    width: 150px;
+    margin: 0 10px -10px 10px;
     background-position:50% 50%;  /* Sets reference point to scale from */
     background-size: contain;
     background-repeat: no-repeat;
@@ -124,96 +139,67 @@
     filter:drop-shadow(2px 1px 0 rgba(148, 148, 148, 0.64)) drop-shadow(-1px -1px 0 rgba(148, 148, 148, 0.64));
 }
 .goose-icon__num-1 {
-    background-image: url('/static/img/Goose1.png');
+    background-image: url('/static/img/gc/1.png');
 }
 .goose-icon__num-2 {
-    height: 140px;
-    width: 142px;
-    margin: 25px 12px 1px 16px;
-    background-image: url('/static/img/Goose2.png');
+    background-image: url('/static/img/gc/2.png');
 }
 .goose-icon__num-3 {
-    height: 139px;
-    width: 145px;
-    margin: 29px 8px -1px 12px;
-    background-image: url('/static/img/Goose3.png');
+    background-image: url('/static/img/gc/3.png');
 }
 .goose-icon__num-4 {
-    height: 138px;
-    width: 150px;
-    margin: 29px 11px 4px 2px;
-    background-image: url('/static/img/Goose4.png');
+    background-image: url('/static/img/gc/4.png');
 }
 .goose-icon__num-5 {
-    margin: 15px 20px 15px 25px;
-    background-image: url('/static/img/Goose5.png');
+    background-image: url('/static/img/gc/5.png');
 }
 .goose-icon__num-6 {
-    height: 143px;
-    width: 155px;
-    margin: 5px 5px 25px 10px;
-    background-image: url('/static/img/Goose6.png');
+    background-image: url('/static/img/gc/6.png');
 }
 .goose-icon__num-7 {
-    height: 137px;
-    width: 140px;
-    margin: 3px 11px 27px 3px;
-    background-image: url('/static/img/Goose7.png');
+    background-image: url('/static/img/gc/7.png');
 }
 .goose-icon__num-8 {
-    margin: 3px 20px 27px 16px;
-    background-image: url('/static/img/Goose8.png');
+    background-image: url('/static/img/gc/8.png');
 }
 .goose-icon__num-9 {
-    height: 149px;
-    width: 149px;
-    margin: 2px 0px 18px 14px;
-    background-image: url('/static/img/Goose9.png');
+    background-image: url('/static/img/gc/9.png');
 }
 .goose-icon__num-10 {
-    margin: 3px 5px 27px 8px;
-    background-image: url('/static/img/Goose10.png');
+    background-image: url('/static/img/gc/10.png');
 }
 .goose-icon__num-11 {
-    margin: 15px 5px 25px 27px;
-    background-image: url('/static/img/Goose11.png');
+    background-image: url('/static/img/gc/11.png');
 }
 .goose-icon__num-12 {
-    margin: 1px 15px 29px 15px;
-    background-image: url('/static/img/Goose12.png');
+    background-image: url('/static/img/gc/12.png');
 }
 .goose-icon__num-13 {
-    background-image: url('/static/img/Goose13.png');
+    background-image: url('/static/img/gc/13.png');
 }
 .goose-icon__num-14 {
-    background-image: url('/static/img/Goose14.png');
+    background-image: url('/static/img/gc/14.png');
 }
 .goose-icon__num-15 {
-    width: 145px;
-    height: 145px;
-    margin: 8px 10px 12px 10px;
-    background-image: url('/static/img/Goose15.png');
+    background-image: url('/static/img/gc/15.png');
 }
 .goose-icon__num-16 {
-    background-image: url('/static/img/Goose16.png');
+    background-image: url('/static/img/gc/16.png');
 }
 .goose-icon__num-17 {
-    background-image: url('/static/img/Goose17.png');
+    background-image: url('/static/img/gc/17.png');
 }
 .goose-icon__num-18 {
-    background-image: url('/static/img/Goose18.png');
+    background-image: url('/static/img/gc/18.png');
 }
 .goose-icon__num-19 {
-    width: 141px;
-    height: 141px;
-    margin: 10px 10px 10px 18px;
-    background-image: url('/static/img/Goose19.png');
+    background-image: url('/static/img/gc/19.png');
 }
 .goose-icon__num-20 {
-    background-image: url('/static/img/Goose20.png');
+    background-image: url('/static/img/gc/20.png');
 }
 .goose-icon__num-21 {
-    background-image: url('/static/img/Goose21.png');
+    background-image: url('/static/img/gc/21.png');
 }
 
 .gooses__ribbon {
@@ -238,6 +224,11 @@
 }
 .prize-selector__description {
     font-size: 1.5em;
+}
+
+.prize-selector__prize {
+    padding: 0 50px 0 50px;
+    font-size: 14px;
 }
 
 .example-input .ant-input {

@@ -79,7 +79,7 @@ export default class GooseSelector extends React.Component {
                     </div>
                     <div key="3">
                       <div className="two__gooses-button">
-                        <Button type="primary" icon="smile-o" disabled={!(counters.twoGoosesSelected)} onClick={() => this.askForEmail()}>
+                        <Button type="primary" icon="smile-o" style={{ width: '30%', 'font-size': '16px' }} disabled={!(counters.twoGoosesSelected)} onClick={() => this.askForEmail()}>
                           Get Prize!
                         </Button>
                       </div>

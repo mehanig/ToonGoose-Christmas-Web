@@ -47,14 +47,14 @@ export default class PrizeSelector extends React.Component {
                 <div key="0">
                     <Row>
                         <Col span={8} offset={4}>
-                            <div className="prize1">
+                            <div className="prize-selector__prize prize1">
                                 <div className={goose1class} style={(counters.selected.includes(15)) ? {border: "1px" +
                                 " solid red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> </div>
                                 <div style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(1)}> Prize1: {counters.prizes[0]} </div>
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="prize2">
+                            <div className="prize-selector__prize prize2">
                                 <div className={goose2class} style={(counters.selected.includes(15)) ? {border: "1px" +
                                 " solid red"} : {color: "gray"}} onClick={() => this.handleClick(2)}> </div>
                                 <div style={(counters.selectedPrize === 2) ? {color: "red"} : {color: "gray"}} onClick={() => this.handleClick(2)}> Prize2: {counters.prizes[1]} </div>
