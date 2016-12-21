@@ -20,6 +20,29 @@
     margin: 20px 0 20px 0;
 }
 
+.gooses__selector-main {
+    display: flex;
+    justify-content: center;
+       display: -webkit-flex;
+   display: flex;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   /* You can set flex-wrap and flex-direction individually */
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   /* Or do it all in one line with flex flow */
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
+   /* tweak the where items line up on the row */
+   /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+   -webkit-align-content: flex-end;
+   align-content: flex-end;
+}
+
 .app-header {
     margin: 0 0 10px 0;
     min-height: 130px;
@@ -126,17 +149,28 @@
 
 .goose-icon {
     display: inline-block;
-    height: 150px;
-    width: 150px;
+    min-height: 150px;
+    min-width: 150px;
     margin: 0 10px -10px 10px;
     background-position:50% 50%;  /* Sets reference point to scale from */
     background-size: contain;
     background-repeat: no-repeat;
+    width: calc(100% * (1/8) - 10px - 1px);
 }
 
 .goose-icon:hover {
     -webkit-filter: drop-shadow(2px 1px 0 rgba(148, 148, 148, 0.64)) drop-shadow(-1px -1px 0 rgba(148, 148, 148, 0.64));
     filter:drop-shadow(2px 1px 0 rgba(148, 148, 148, 0.64)) drop-shadow(-1px -1px 0 rgba(148, 148, 148, 0.64));
+}
+
+.selected-goose-1 {
+    -webkit-filter:drop-shadow(3px 3px 1px rgb(247, 85, 85)) drop-shadow(-3px -3px 1px rgb(247, 85, 85)) drop-shadow(3px -3px 1px rgb(247, 85, 85)) drop-shadow(-3px 3px 1px rgb(247, 85, 85))!important;
+    filter:drop-shadow(3px 3px 1px rgb(247, 85, 85)) drop-shadow(-3px -3px 1px rgb(247, 85, 85)) drop-shadow(3px -3px 1px rgb(247, 85, 85)) drop-shadow(-3px 3px 1px rgb(247, 85, 85))!important;
+}
+
+.selected-goose-2 {
+    -webkit-filter:drop-shadow(3px 3px 1px rgb(29, 94, 247)) drop-shadow(-3px -3px 1px rgb(29, 94, 247)) drop-shadow(3px -3px 1px rgb(29, 94, 247)) drop-shadow(-3px 3px 1px rgb(29, 94, 247))!important;
+    filter:drop-shadow(3px 3px 1px rgb(29, 94, 247)) drop-shadow(-3px -3px 1px rgb(29, 94, 247)) drop-shadow(3px -3px 1px rgb(29, 94, 247)) drop-shadow(-3px 3px 1px rgb(29, 94, 247))!important;
 }
 .goose-icon__num-1 {
     background-image: url('/static/img/gc/1.png');
@@ -245,6 +279,18 @@
     height: 250px;
 }
 
+.gift-bubble__main {
+    position: relative;
+    min-height: 230px;
+    min-width: 320px;
+    margin: 20px;
+    border-radius: 10px;
+    background-position:50% 50%;  /* Sets reference point to scale from */
+    background-size: cover;
+    background-image: url('/static/img/Gift_bubble.png');
+    background-repeat: no-repeat;
+}
+
 /* The Modal (background) */
 .modal__goose {
     /*display: none; !* Hidden by default *!*/
@@ -266,14 +312,35 @@
 /* Modal Content */
 .modal__goose-content {
     position: fixed;
-    bottom: 0;
     background-color: #fefefe;
     width: 200px;
-    margin-left: 40%;
+    margin-left: -140px;
+    left: 50%;
+    bottom: 20%;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
     animation-duration: 0.4s
+}
+
+.modal__goose-content-close {
+    color: #c4c4c4;
+    float: right;
+    font-size: 18px;
+    position: relative;
+    right: 10px;
+    cursor: pointer;
+}
+
+.modal__goose-content-description {
+    font-size: 24px;
+    color: white;
+    position: relative;
+    font-weight: 100;
+    margin: 20px;
+    padding-top: 30px;
+    text-align: center;
+    
 }
 
 /* The Close Button */

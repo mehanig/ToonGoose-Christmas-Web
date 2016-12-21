@@ -75,7 +75,7 @@ export default class EmailModal extends React.Component {
     return (
       <div>
         {/*<Button type="primary" onClick={() => this.showModal()}>Open a modal dialog</Button>*/}
-        <Modal title="You selected 2 gifts!"
+        <Modal title="You picked two geese."
           visible={this.state.visible}
           onOk={() => this.handleOk()}
           confirmLoading={this.state.confirmLoading}
@@ -102,8 +102,8 @@ export default class EmailModal extends React.Component {
             <div></div>
         }
           {/*<p>{this.state.ModalText}</p>*/}
-            <div>But you only can keep one of them.</div>
-            <div>Type in your email so we could send your awesome gift</div>
+            <div>Type in your e-mail address to see what gifts the geese have for you.</div>
+            <div>Remember, you may only keep one.</div>
             <div className="example-input">
                 <Input size="large" placeholder="Your email goes here" onChange={(e) => this.handleEmailInput(e)} />
             </div>
