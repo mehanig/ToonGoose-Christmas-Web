@@ -63,6 +63,11 @@ def create_roll(request, format=None):
                 customer = Customer.objects.create(email=request.data['email'])
                 customer.save()
             except IntegrityError:
+                customer = GooseRoll.objects.get(customer__email=request.data['email'])
+                #Case: user closed page and want to finish selection with same email
+                if customer and customer.selected == 0:
+                    return Response({'url': customer.url},
+                            status=status.HTTP_200_OK)
                 return Response({'reason': 'duplicate'}, status=status.HTTP_400_BAD_REQUEST)
             url = str(random.randint(1, 9999999999999999999999999999999))
             prize1, prize2 = PrizePool().get_two_unique_items()

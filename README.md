@@ -22,7 +22,7 @@ but ready for implementing apps with react.
 Whole app is one Docker container, push it to google private registry
 `docker build -t toongoseny .`
 tag it
-`docker tag toongoseny gcr.io/tongoseny/tongosenyimage`
+`docker tag toongoseny gcr.io/toongoseny/toongosenyimage`
 push it
 `gcloud docker -- push gcr.io/toongoseny/toongosenyimage`
 don't set any permissons, it's private by default
