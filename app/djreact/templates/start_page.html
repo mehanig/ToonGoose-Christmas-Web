@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% block main %}
+<link rel="stylesheet" href="/static/css/first.css">
+<div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array();
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image();
+					images[i].src = preload.arguments[i];
+				}
+			}
+			preload(
+				"/static/img/gc/1.png",
+				"/static/img/gc/2.png",
+				"/static/img/gc/3.png",
+                "/static/img/gc/4.png",
+				"/static/img/gc/5.png",
+				"/static/img/gc/6.png",
+                "/static/img/gc/7.png",
+				"/static/img/gc/8.png",
+				"/static/img/gc/9.png",
+                "/static/img/gc/10.png",
+				"/static/img/gc/11.png",
+				"/static/img/gc/12.png",
+                "/static/img/gc/13.png",
+                "/static/img/gc/14.png",
+                "/static/img/gc/15.png",
+                "/static/img/gc/16.png",
+                "/static/img/gc/17.png",
+                "/static/img/gc/18.png",
+                "/static/img/gc/19.png",
+                "/static/img/gc/20.png",
+                "/static/img/gc/21.png"
+			);
+		//--><!]]>
+	</script>
+</div>
+
+
+<div id="bg__main">
+    <img src="/static/img/bg_main.png" alt="">
+</div>
+<div class="main__content">
+    <div class="main__content-flex">
+        <div class="main__content-block">
+            <div class="logo_image">
+                <img src="/static/img/LogoHeader.png" alt="">
+            </div>
+            <div>
+                <b>The New Year is approaching fast.</b><br><br>
+                And we – ToonGoose, your favourite motion design studio – want to give you something special as a present.
+                We’ve done business together before and it was awesome! We should do it again.
+                Pick a present at this site to make sure our next project will be even greater for both you and us.
+                <br><br><b>Happy New Year! Honk!</b>
+            </div>
+            <div class="button__gift" onclick="location.href='/game/';">
+                Get Gift!
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

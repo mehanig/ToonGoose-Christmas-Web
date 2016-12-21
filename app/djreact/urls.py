@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^api/v1/email/$', views.create_roll),
     url(r'^api/v1/selected_prize/$', views.selected_prize),
     url(r'^api/v1/prize-pool/$', views.prize_pool_list),
-    url(r'^$', generic.TemplateView.as_view(template_name='main_page.html')),
+    url(r'^$', generic.TemplateView.as_view(template_name='start_page.html')),
+    url(r'^game/$', generic.TemplateView.as_view(template_name='main_page.html')),
 ]

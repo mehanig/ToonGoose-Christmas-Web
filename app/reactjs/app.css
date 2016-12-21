@@ -127,7 +127,7 @@
     margin-bottom: -30px;
     background-position:50% 50%;  /* Sets reference point to scale from */
     background-size: contain;
-    background-image: url('/static/img/Ribbon_List_emails.png');
+    background-image: url('/static/img/Ribbon_feed.png');
     background-repeat: no-repeat;
 }
 
@@ -243,7 +243,7 @@
     margin-bottom: -20px;
     background-position:50% 50%;  /* Sets reference point to scale from */
     background-size: contain;
-    background-image: url('/static/img/Ribbon.png');
+    background-image: url('/static/img/Ribbon_header.png');
     background-repeat: no-repeat;
 }
 
@@ -314,9 +314,9 @@
     position: fixed;
     background-color: #fefefe;
     width: 200px;
-    margin-left: -140px;
+    margin-left: -160px;
     left: 50%;
-    bottom: 20%;
+    bottom: 40%;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
@@ -375,12 +375,12 @@
 /* Add Animation */
 @-webkit-keyframes slideIn {
     from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    to {bottom: 40%; opacity: 1}
 }
 
 @keyframes slideIn {
     from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    to {bottom: 40%; opacity: 1}
 }
 
 @-webkit-keyframes fadeIn {
