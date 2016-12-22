@@ -47,8 +47,8 @@ export default class PrizeFeed extends React.Component {
             </Row>
             <Row type="flex" justify="center">
                 <div className="prize-feed__descr">
-                    This awesome people already got fancy prizes.<br/>
-                    But don't panic, there are more gifts waiting!
+                    These awesome people already got their prizes.<br/>
+                    But don't panic, we have more!
                 </div>
             </Row>
             <Row>

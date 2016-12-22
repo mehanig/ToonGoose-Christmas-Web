@@ -151,11 +151,17 @@
     display: inline-block;
     min-height: 150px;
     min-width: 150px;
+    max-height: 150px;
+    max-width: 150px;
     margin: 0 10px -10px 10px;
     background-position:50% 50%;  /* Sets reference point to scale from */
     background-size: contain;
     background-repeat: no-repeat;
-    width: calc(100% * (1/8) - 10px - 1px);
+    width: calc(100% * (1/7) - 10px - 1px);
+}
+
+.gooses__maxWidthContainer {
+    max-width: 1300px;
 }
 
 .goose-icon:hover {
@@ -236,6 +242,65 @@
     background-image: url('/static/img/gc/21.png');
 }
 
+.selected-square-1 {
+    background-color: #f75555;
+    min-height: 120px;
+    min-width: 120px;
+    width: calc(100% * (1 / 7) - 10px - 1px);
+    position: relative;
+    top: -145px;
+    left: 17px;
+    z-index: -1;
+}
+
+.selected-square-2 {
+    background-color: #698cf7;
+    min-height: 120px;
+    min-width: 120px;
+    width: calc(100% * (1 / 7) - 10px - 1px);
+    position: relative;
+    top: -145px;
+    left: 17px;
+    z-index: -1;
+}
+
+.selected-square-hidden {
+    display: none;
+    background-color: #f75555;
+    min-height: 120px;
+    min-width: 120px;
+    width: calc(100% * (1 / 7) - 10px - 1px);
+    position: relative;
+    top: -145px;
+    left: 17px;
+    z-index: -1;
+}
+
+.selected-square-large {
+    background-color: #f75555;
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    width: calc(100% * (1 / 7) - 10px - 1px);
+    position: relative;
+    top: -223px;
+    left: 22px;
+    z-index: -1;
+}
+
+.selected-square-large-hidden {
+    display: none;
+    background-color: #698cf7;
+    min-height: 200px;
+    min-width: 200px;
+    width: calc(100% * (1 / 7) - 10px - 1px);
+    position: relative;
+    top: -264px;
+    left: 71px;
+    z-index: -1;
+}
+
 .gooses__ribbon {
     position: relative;
     top: -40px;
@@ -275,8 +340,10 @@
 }
 
 .large-icon {
-    width: 250px;
-    height: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    max-height: 250px;
+    max-width: 250px;
 }
 
 .gift-bubble__main {
@@ -336,7 +403,7 @@
     font-size: 24px;
     color: white;
     position: relative;
-    font-weight: 100;
+    font-weight: 300;
     margin: 20px;
     padding-top: 30px;
     text-align: center;

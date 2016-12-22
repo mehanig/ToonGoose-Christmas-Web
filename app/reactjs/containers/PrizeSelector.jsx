@@ -35,20 +35,20 @@ export default class PrizeSelector extends React.Component {
         let {counters} = this.props;
         let goose1class = `goose-icon goose-icon__num-${counters.selected[0]} large-icon`;
         let goose2class = `goose-icon goose-icon__num-${counters.selected[1]} large-icon`;
+        if (goose_id === 1) {
+            return goose1class;
+        }
+        if (goose_id === 2) {
+            return goose2class;
+        }
+    }
+
+    getSelection(goose_id) {
+        let {counters} = this.props;
         if (counters.selectedPrize === goose_id) {
-            if (goose_id === 1) {
-                return goose1class + " selected-goose-1";
-            }
-            if (goose_id === 2) {
-                return goose2class + " selected-goose-2";
-            }
+            return "selected-square-large"
         } else {
-            if (goose_id === 1) {
-                return goose1class
-            }
-            if (goose_id === 2) {
-                return goose2class;
-            }
+            return "selected-square-large-hidden"
         }
     }
 
@@ -66,14 +66,20 @@ export default class PrizeSelector extends React.Component {
                         <Row>
                             <Col span={8} offset={4}>
                                 <div className="prize-selector__prize prize1">
-                                    <div className={this.getGooseClass(1)} onClick={() => this.handleClick(1)}></div>
+                                    <div className="goose-icon large-icon">
+                                        <div className={this.getGooseClass(1)} onClick={() => this.handleClick(1)}></div>
+                                        <div className={this.getSelection(1)}></div>
+                                    </div>
                                     <div style={(counters.selectedPrize === 1) ? {color: "red"} : {color: "gray"}}
                                          onClick={() => this.handleClick(1)}> Prize1: {counters.prizes[0]} </div>
                                 </div>
                             </Col>
                             <Col span={8}>
                                 <div className="prize-selector__prize prize2">
-                                    <div className={this.getGooseClass(2)} onClick={() => this.handleClick(2)}></div>
+                                    <div className="goose-icon large-icon">
+                                        <div className={this.getGooseClass(2)} onClick={() => this.handleClick(2)}></div>
+                                        <div className={this.getSelection(2)}></div>
+                                    </div>
                                     <div style={(counters.selectedPrize === 2) ? {color: "red"} : {color: "gray"}}
                                          onClick={() => this.handleClick(2)}> Prize2: {counters.prizes[1]} </div>
                                 </div>

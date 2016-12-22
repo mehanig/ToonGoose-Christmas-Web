@@ -68,7 +68,7 @@ export default class ShareWithFriends extends React.Component {
               message: "Please input valid email",
             }],
           })(
-            <Input placeholder="Friends email" style={{ width: '60%', marginRight: 8 }} />
+            <Input placeholder="Friend's email" style={{ width: '60%', marginRight: 8 }} />
           )}
           <Icon
             className="dynamic-delete-button"
@@ -87,7 +87,7 @@ export default class ShareWithFriends extends React.Component {
             <Icon type="plus" /> Add email
           </Button>
           <Button type="solid" onClick={this.add} style={{ width: '60%', 'font-size': '14px' }}>
-            <Icon type="rocket" /> Share and get extra prize
+            <Icon type="rocket" /> Get an extra gift!
           </Button>
         </FormItem>
       </Form>

@@ -15,11 +15,11 @@ export default class CongratsPage extends React.Component {
             <QueueAnim>
               <div key="0">
                 <Row className="congrats__header-text"><Col span={12}>
-                    <span> Horray! Good choice! <br />An email with your Goose was send.</span>
+                    <span> You choose like a pro! <br />Your gift is on it's way to your inbox!</span>
                     <div className="goose__was-send-image"></div>
                 </Col></Row>
                 <Row className="congrats__header-text-2"><Col span={12}>
-                    <span>Share this site with 3 friends and get one extra gift. </span>
+                    <span>Share this site with 3 friends and get a fun extra gift.</span>
                 </Col></Row>
                 <Row><Col span={14} offset={6}>
                     <WrappedDynamicFieldSet />
