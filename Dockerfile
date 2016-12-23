@@ -33,7 +33,7 @@ COPY app/requirements.txt /home/docker/code/app/
 RUN pip3 install -r /home/docker/code/app/requirements.txt
 
 RUN npm install
-RUN cd app && python3 manage.py migrate
+RUN cd app && python3 manage.py collectstatic --noinput && python3 manage.py migrate
 
 # in another terminal:
 #mv webpack.local-settings.js.sample webpack.local-settings.js

@@ -22,8 +22,17 @@ export default class CongratsPage extends React.Component {
             <Col span={20} offset={2}>
                 { counters.sharedWithFriends ? <div>
                     { counters.sharedWithFriendsError ?
-                        <div> ERROR </div>
-                        : <div>YOU ARE COOL</div>
+                        <div className="final__final-error"> ERROR </div>
+                        :
+                        <div className="final__final-main">
+                            <div className="final__final-prize-image">
+                            </div>
+                            <div>
+                            Your extra gift is on his way!<br />
+                            Watch your email in few minutes, and again <br/>
+                            Happy 2017 year!
+                            </div>
+                        </div>
                     }
                     </div>
                     :

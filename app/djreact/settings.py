@@ -23,9 +23,9 @@ with open(BASE_DIR + '/djreact/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -158,6 +158,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'djreact/static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "djreact/static_nginx")
 
 try:
     from .local_settings import *  # flake8: noqa

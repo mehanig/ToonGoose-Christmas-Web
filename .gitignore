@@ -140,3 +140,4 @@ app.sock
 /app/djreact/static/bundles
 /app/djreact/promocodes.txt
 
+/app/djreact/static_nginx

@@ -126,7 +126,7 @@ export default class ShareWithFriends extends React.Component {
                     <Button type="dashed" onClick={this.add} style={{width: '60%', 'margin-bottom': '15px'}}>
                         <Icon type="plus"/> Add email
                     </Button>
-                    <Button type="solid" onClick={this.submit} style={{width: '60%', 'font-size': '14px'}}>
+                    <Button type="solid" className="ant-btn-primary" onClick={this.submit} style={{width: '60%', 'font-size': '14px'}}>
                         <Icon type="rocket"/> Get an extra gift!
                     </Button>
                 </FormItem>
