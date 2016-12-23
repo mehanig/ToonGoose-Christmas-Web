@@ -83,9 +83,11 @@ export default class GooseSelector extends React.Component {
                                      onClick={() => this.handleClick(8)}></div>
                                     <div className={this.getGooseClass(8)}></div>
                                 </div>
+                                <div className="goose-icon">
                                 <div className="goose-icon goose-icon__num-9"
                                      onClick={() => this.handleClick(9)}></div>
                                     <div className={this.getGooseClass(9)}></div>
+                                </div>
                                 <div className="goose-icon">
                                 <div className="goose-icon goose-icon__num-10"
                                      onClick={() => this.handleClick(10)}></div>
