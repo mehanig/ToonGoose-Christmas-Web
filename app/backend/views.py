@@ -10,9 +10,10 @@ from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from django.db import IntegrityError
 from django.conf import settings
-from backend.models import GooseRoll, Customer, PrizePoolItem
+from backend.models import GooseRoll, Customer, PrizePoolItem, PromoCode, InvitedUser
 from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer
 from .const import GOOSE_WINNERS_LIST_SIZE
+from .utils import find_promo
 
 
 class GooseRollViewSet(viewsets.ModelViewSet):
@@ -32,8 +33,34 @@ class GooseRollViewSet(viewsets.ModelViewSet):
             return Response(f)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    def post(self, request):
-        print(request)
+    def post(self, request, pk=None):
+        try:
+            data = request.data
+            referrer = GooseRoll.objects.get(url=pk).customer
+            for email_key in data.keys():
+                if email_key.split('-')[0] == 'email':
+                    print(email_key, data[email_key])
+                    invited = InvitedUser.objects.create(email=data[email_key], referrer=referrer)
+                    invited.save()
+            code = find_promo()
+            if code:
+                new_promo = PromoCode.objects.create(code=code,
+                                                     owner=referrer)
+                new_promo.save()
+            else:
+                # send_email_no_promocodes_left
+                from .utils import send_html_mail
+                send_html_mail(
+                    'NO PROMOCODES LEFT ON TOONGOOSE CHRISTMAS',
+                    'This is automated message, no more PromoCodes left on server',
+                    ['dokluch@gmail.com']
+                )
+                return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                pass
+        except Exception as e:
+            print(e)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        return Response(status=status.HTTP_200_OK)
 
 
 class CustomerViewSet(viewsets.ModelViewSet):

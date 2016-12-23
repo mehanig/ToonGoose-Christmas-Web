@@ -2,7 +2,7 @@ import random
 import threading
 
 from collections import Counter
-from .models import PrizePoolItem
+from .models import PrizePoolItem, PromoCode
 from django.conf import settings as s
 from django.core.mail import EmailMessage, send_mail
 
@@ -86,3 +86,10 @@ class EmailThread(threading.Thread):
 
 def send_html_mail(subject, html_content, recipient_list):
     EmailThread(subject, html_content, recipient_list).start()
+
+
+def find_promo():
+    for code in s.PROMOCODES_LIST:
+        if not len(PromoCode.objects.filter(code=code)):
+            return code
+    return False

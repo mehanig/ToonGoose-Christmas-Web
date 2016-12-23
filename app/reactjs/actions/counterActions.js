@@ -8,6 +8,8 @@ export const PRIZE_APPROVED = "PRIZE_APPROVED";
 export const ASK_FOR_EMAIL = "ASK_FOR_EMAIL";
 export const PRIZE_APPROVED_ERROR = "PRIZE_APPROVED_ERROR";
 export const EMAIL_CANCEL_CLICKED = "EMAIL_CANCEL_CLICKED";
+export const SHARED_EMAILS_SUCCESS = "SHARED_EMAILS_SUCCESS";
+export const SHARED_EMAILS_FAILED = "SHARED_EMAILS_FAILED";
 
 
 export function sendEmail(data) {
@@ -27,6 +29,14 @@ export function askForEmail() {
 
 export function emailCancelClicked() {
   return {type: EMAIL_CANCEL_CLICKED}
+}
+
+export function sharedEmailsSuccess() {
+  return {type: SHARED_EMAILS_SUCCESS}
+}
+
+export function sharedEmailsFailed() {
+  return {type: SHARED_EMAILS_FAILED}
 }
 
 export function selectedPrize(data) {

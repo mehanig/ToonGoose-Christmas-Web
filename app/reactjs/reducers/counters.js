@@ -43,6 +43,10 @@ export default function submissions(state=initialState, action={}) {
       return {...state, selectedPrize: action.prize_id};
   case Actions.PRIZE_APPROVED:
       return {...state, selectedPrizeApproved: action.prize_id};
+  case Actions.SHARED_EMAILS_SUCCESS:
+      return {...state, sharedWithFriends: true};
+  case Actions.SHARED_EMAILS_FAILED:
+      return {...state, sharedWithFriends: true, sharedWithFriendsError: true};
   default:
     return state
   }

@@ -13,6 +13,25 @@ class PrizePoolItem(models.Model):
     prize = models.IntegerField(db_index=True)
     description = models.CharField(max_length=256)
 
+    def __str__(self):
+        return 'PrizePoolItem: ' + self.description
+
+
+class InvitedUser(models.Model):
+    email = models.EmailField()
+    referrer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return 'Invited user: ' + str(self.email)
+
+
+class PromoCode(models.Model):
+    code = models.CharField(max_length=32, db_index=True, null=False, blank=False)
+    owner = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "Promo: " + self.code + ' for ' + self.owner.email
+
 
 class GooseRoll(models.Model):
     url = models.CharField(max_length=32, db_index=True)

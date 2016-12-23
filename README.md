@@ -16,6 +16,16 @@ node server.js
 serves few static pages for now
 but ready for implementing apps with react.
 
+#HOW TO RUN IN PRODUCTION
+- Build webpack for production
+- change settings for production in `local_settings.py`
+- update `secret_key.txt` if needed
+- update `secret_email_key.txt` if needed
+- update `promocodes.txt` and make `PROMOCODES_LIST` to read it
+- build docker
+- push docker
+- run docker in GCE
+
 ####Build webpack for production
 ```
 ./node_modules/webpack/bin/webpack.js --config webpack.prod.config.js

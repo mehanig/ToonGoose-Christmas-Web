@@ -138,4 +138,5 @@ app/database/db.sqlite3
 app.sock
 
 /app/djreact/static/bundles
+/app/djreact/promocodes.txt
 
