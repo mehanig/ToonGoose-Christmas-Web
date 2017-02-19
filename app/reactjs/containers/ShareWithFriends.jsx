@@ -14,17 +14,10 @@ let uuid = 2;
 
 export default class ShareWithFriends extends React.Component {
 
-    componentWillMount() {
-        this.props.form.setFieldsValue({
-            keys: [0, 1, 2],
-        });
-    }
-
     remove = (k) => {
         const {form} = this.props;
         // can use data-binding to get
         const keys = form.getFieldValue('keys');
-        // We need at least one passenger
         if (keys.length <= 3) {
             return;
         }
@@ -74,7 +67,7 @@ export default class ShareWithFriends extends React.Component {
                 return false;
             }
         }
-        let unique = [...new Set(emails)];
+        let unique = [...new Set(emails)]; 
         return emails.length === unique.length && unique.length > uuid;
     }
 
@@ -90,7 +83,8 @@ export default class ShareWithFriends extends React.Component {
         const formItemLayoutWithOutLabel = {
             wrapperCol: {span: 20, offset: 4},
         };
-
+        
+        getFieldDecorator('keys', { initialValue: [0,1,2] });
         const keys = getFieldValue('keys');
         const formItems = keys.map((k, index) => {
             return (

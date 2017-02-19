@@ -1,0 +1,260 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+0001_initial.py	app/backend/migrations/0001_initial.py	1;"	kind:file	line:1
+0002_auto_20161208_1728.py	app/backend/migrations/0002_auto_20161208_1728.py	1;"	kind:file	line:1
+0003_prizepoolitem.py	app/backend/migrations/0003_prizepoolitem.py	1;"	kind:file	line:1
+0004_inviteduser_promocode.py	app/backend/migrations/0004_inviteduser_promocode.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	app/djreact/settings.py	/^ALLOWED_HOSTS = ["*"]$/;"	kind:variable	line:28
+ANYMAIL	app/djreact/settings.py	/^ANYMAIL = {$/;"	kind:variable	line:143
+AUTH_PASSWORD_VALIDATORS	app/djreact/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:99
+AppConfig	app/backend/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+BASE_DIR	app/djreact/local_settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(__file__))$/;"	kind:variable	line:2
+BASE_DIR	app/djreact/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+BackendConfig	app/backend/apps.py	/^class BackendConfig(AppConfig):$/;"	kind:class	line:4
+Context	app/backend/signals.py	/^from django.template import Context$/;"	kind:namespace	line:6
+Counter	app/backend/utils.py	/^from collections import Counter$/;"	kind:namespace	line:4
+Counter	app/backend/views.py	/^from collections import Counter$/;"	kind:namespace	line:2
+Customer	app/backend/admin.py	/^from backend.models import GooseRoll, Customer, PromoCode, PrizePoolItem, InvitedUser$/;"	kind:namespace	line:2
+Customer	app/backend/models.py	/^class Customer(models.Model):$/;"	kind:class	line:5
+Customer	app/backend/serializers.py	/^from backend.models import GooseRoll, Customer$/;"	kind:namespace	line:1
+Customer	app/backend/views.py	/^from backend.models import GooseRoll, Customer, PrizePoolItem, PromoCode, InvitedUser$/;"	kind:namespace	line:13
+CustomerSerializer	app/backend/serializers.py	/^class CustomerSerializer(serializers.HyperlinkedModelSerializer):$/;"	kind:class	line:8
+CustomerSerializer	app/backend/views.py	/^from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer$/;"	kind:namespace	line:14
+CustomerViewSet	app/backend/views.py	/^class CustomerViewSet(viewsets.ModelViewSet):$/;"	kind:class	line:66
+DATABASES	app/djreact/settings.py	/^DATABASES = {$/;"	kind:variable	line:82
+DEBUG	app/djreact/settings.py	/^DEBUG = False$/;"	kind:variable	line:26
+DEFAULT_FROM_EMAIL	app/djreact/settings.py	/^DEFAULT_FROM_EMAIL = "hello@toongoose.com"$/;"	kind:variable	line:150
+EMAIL_BACKEND	app/djreact/settings.py	/^EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"$/;"	kind:variable	line:148
+EmailMessage	app/backend/utils.py	/^from django.core.mail import EmailMessage, send_mail$/;"	kind:namespace	line:7
+EmailThread	app/backend/utils.py	/^class EmailThread(threading.Thread):$/;"	kind:class	line:72
+GOOSE_WINNERS_LIST_SIZE	app/backend/const.py	/^GOOSE_WINNERS_LIST_SIZE = 10$/;"	kind:variable	line:1
+GOOSE_WINNERS_LIST_SIZE	app/backend/views.py	/^from .const import GOOSE_WINNERS_LIST_SIZE$/;"	kind:namespace	line:15
+GooseRoll	app/backend/admin.py	/^from backend.models import GooseRoll, Customer, PromoCode, PrizePoolItem, InvitedUser$/;"	kind:namespace	line:2
+GooseRoll	app/backend/models.py	/^class GooseRoll(models.Model):$/;"	kind:class	line:36
+GooseRoll	app/backend/serializers.py	/^from backend.models import GooseRoll, Customer$/;"	kind:namespace	line:1
+GooseRoll	app/backend/signals.py	/^from .models import PrizePoolItem, GooseRoll, InvitedUser, PromoCode$/;"	kind:namespace	line:4
+GooseRoll	app/backend/views.py	/^from backend.models import GooseRoll, Customer, PrizePoolItem, PromoCode, InvitedUser$/;"	kind:namespace	line:13
+GooseRollSerializer	app/backend/serializers.py	/^class GooseRollSerializer(serializers.ModelSerializer):$/;"	kind:class	line:14
+GooseRollSerializer	app/backend/views.py	/^from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer$/;"	kind:namespace	line:14
+GooseRollViewSet	app/backend/views.py	/^class GooseRollViewSet(viewsets.ModelViewSet):$/;"	kind:class	line:19
+GooseSecureSerializer	app/backend/serializers.py	/^class GooseSecureSerializer(serializers.ModelSerializer):$/;"	kind:class	line:21
+GooseSecureSerializer	app/backend/views.py	/^from .serializers import GooseRollSerializer, CustomerSerializer, GooseSecureSerializer$/;"	kind:namespace	line:14
+INSTALLED_APPS	app/djreact/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+IntegrityError	app/backend/views.py	/^from django.db import IntegrityError$/;"	kind:namespace	line:11
+InvitedUser	app/backend/admin.py	/^from backend.models import GooseRoll, Customer, PromoCode, PrizePoolItem, InvitedUser$/;"	kind:namespace	line:2
+InvitedUser	app/backend/models.py	/^class InvitedUser(models.Model):$/;"	kind:class	line:20
+InvitedUser	app/backend/signals.py	/^from .models import PrizePoolItem, GooseRoll, InvitedUser, PromoCode$/;"	kind:namespace	line:4
+InvitedUser	app/backend/views.py	/^from backend.models import GooseRoll, Customer, PrizePoolItem, PromoCode, InvitedUser$/;"	kind:namespace	line:13
+JSONParser	app/backend/views.py	/^from rest_framework.parsers import JSONParser$/;"	kind:namespace	line:9
+LANGUAGE_CODE	app/djreact/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:130
+MAILGUN_ACCESS_KEY	app/djreact/settings.py	/^    MAILGUN_ACCESS_KEY = f.read().strip()$/;"	kind:variable	line:141
+MAILGUN_SERVER_NAME	app/djreact/settings.py	/^MAILGUN_SERVER_NAME = 'toongoose.com'$/;"	kind:variable	line:152
+MIDDLEWARE_CLASSES	app/djreact/settings.py	/^MIDDLEWARE_CLASSES = [$/;"	kind:variable	line:47
+Meta	app/backend/serializers.py	/^    class Meta:$/;"	kind:class	line:16
+Meta	app/backend/serializers.py	/^    class Meta:$/;"	kind:class	line:23
+Meta	app/backend/serializers.py	/^    class Meta:$/;"	kind:class	line:9
+Migration	app/backend/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+Migration	app/backend/migrations/0002_auto_20161208_1728.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	app/backend/migrations/0003_prizepoolitem.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	app/backend/migrations/0004_inviteduser_promocode.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+PRIZES_LIST_EN	app/djreact/settings.py	/^PRIZES_LIST_EN = [$/;"	kind:variable	line:180
+PRIZES_LIST_RU	app/djreact/settings.py	/^PRIZES_LIST_RU = [$/;"	kind:variable	line:170
+PRIZES_PROB	app/djreact/settings.py	/^PRIZES_PROB = [$/;"	kind:variable	line:194
+PROMOCODES_LIST	app/djreact/settings.py	/^    PROMOCODES_LIST = list(map(lambda x: x.strip(), f.readlines()))$/;"	kind:variable	line:205
+PrizePool	app/backend/signals.py	/^from .utils import PrizePool, send_html_mail$/;"	kind:namespace	line:3
+PrizePool	app/backend/utils.py	/^class PrizePool(metaclass=Singleton):$/;"	kind:class	line:22
+PrizePool	app/backend/views.py	/^from .utils import PrizePool$/;"	kind:namespace	line:4
+PrizePoolItem	app/backend/admin.py	/^from backend.models import GooseRoll, Customer, PromoCode, PrizePoolItem, InvitedUser$/;"	kind:namespace	line:2
+PrizePoolItem	app/backend/models.py	/^class PrizePoolItem(models.Model):$/;"	kind:class	line:12
+PrizePoolItem	app/backend/signals.py	/^from .models import PrizePoolItem, GooseRoll, InvitedUser, PromoCode$/;"	kind:namespace	line:4
+PrizePoolItem	app/backend/utils.py	/^from .models import PrizePoolItem, PromoCode$/;"	kind:namespace	line:5
+PrizePoolItem	app/backend/views.py	/^from backend.models import GooseRoll, Customer, PrizePoolItem, PromoCode, InvitedUser$/;"	kind:namespace	line:13
+PrizeProb	app/djreact/settings.py	/^PrizeProb = namedtuple('PrizeProb', ['prob', 'limit'])$/;"	kind:variable	line:191
+PromoCode	app/backend/admin.py	/^from backend.models import GooseRoll, Customer, PromoCode, PrizePoolItem, InvitedUser$/;"	kind:namespace	line:2
+PromoCode	app/backend/models.py	/^class PromoCode(models.Model):$/;"	kind:class	line:28
+PromoCode	app/backend/signals.py	/^from .models import PrizePoolItem, GooseRoll, InvitedUser, PromoCode$/;"	kind:namespace	line:4
+PromoCode	app/backend/utils.py	/^from .models import PrizePoolItem, PromoCode$/;"	kind:namespace	line:5
+PromoCode	app/backend/views.py	/^from backend.models import GooseRoll, Customer, PrizePoolItem, PromoCode, InvitedUser$/;"	kind:namespace	line:13
+REST_FRAMEWORK	app/djreact/settings.py	/^REST_FRAMEWORK = {$/;"	kind:variable	line:114
+ROOT_URLCONF	app/djreact/settings.py	/^ROOT_URLCONF = 'djreact.urls'$/;"	kind:variable	line:58
+Response	app/backend/views.py	/^from rest_framework.response import Response$/;"	kind:namespace	line:10
+SECRET_KEY	app/djreact/settings.py	/^    SECRET_KEY = f.read().strip()$/;"	kind:variable	line:23
+SIZE	app/backend/utils.py	/^    SIZE = 100$/;"	kind:variable	line:24
+STATICFILES_DIRS	app/djreact/settings.py	/^STATICFILES_DIRS = [$/;"	kind:variable	line:158
+STATIC_ROOT	app/djreact/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "djreact\/static_nginx")$/;"	kind:variable	line:162
+STATIC_URL	app/djreact/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:157
+Singleton	app/backend/utils.py	/^class Singleton(type):$/;"	kind:class	line:10
+TEMPLATES	app/djreact/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:60
+TIME_ZONE	app/djreact/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:132
+TestCase	app/backend/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+USE_I18N	app/djreact/settings.py	/^USE_I18N = True$/;"	kind:variable	line:134
+USE_L10N	app/djreact/settings.py	/^USE_L10N = True$/;"	kind:variable	line:136
+USE_TZ	app/djreact/settings.py	/^USE_TZ = True$/;"	kind:variable	line:138
+WEBPACK_LOADER	app/djreact/local_settings.py	/^WEBPACK_LOADER = {$/;"	kind:variable	line:21
+WSGI_APPLICATION	app/djreact/settings.py	/^WSGI_APPLICATION = 'djreact.wsgi.application'$/;"	kind:variable	line:76
+__call__	app/backend/utils.py	/^    def __call__(cls, *args, **kwargs):$/;"	kind:member	line:13
+__init__	app/backend/utils.py	/^    def __init__(self):$/;"	kind:member	line:26
+__init__	app/backend/utils.py	/^    def __init__(self, subject, html_content, recipient_list):$/;"	kind:member	line:73
+__init__.py	app/__init__.py	1;"	kind:file	line:1
+__init__.py	app/backend/__init__.py	1;"	kind:file	line:1
+__init__.py	app/backend/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	app/djreact/__init__.py	1;"	kind:file	line:1
+__str__	app/backend/models.py	/^    def __str__(self):$/;"	kind:member	line:16
+__str__	app/backend/models.py	/^    def __str__(self):$/;"	kind:member	line:24
+__str__	app/backend/models.py	/^    def __str__(self):$/;"	kind:member	line:32
+__str__	app/backend/models.py	/^    def __str__(self):$/;"	kind:member	line:73
+__str__	app/backend/models.py	/^    def __str__(self):$/;"	kind:member	line:8
+_instances	app/backend/utils.py	/^    _instances = {}$/;"	kind:variable	line:11
+admin	app/backend/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	app/djreact/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:17
+admin.py	app/backend/admin.py	1;"	kind:file	line:1
+api_view	app/backend/views.py	/^from rest_framework.decorators import api_view$/;"	kind:namespace	line:8
+application	app/djreact/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	app/backend/apps.py	1;"	kind:file	line:1
+call_command	app/djreact/wsgi.py	/^    from django.core.management import call_command$/;"	kind:namespace	line:21
+code	app/backend/models.py	/^    code = models.CharField(max_length=32, db_index=True, null=False, blank=False)$/;"	kind:variable	line:29
+const.py	app/backend/const.py	1;"	kind:file	line:1
+create_roll	app/backend/views.py	/^def create_roll(request, format=None):$/;"	kind:function	line:83
+custom_exception_handler	app/djreact/utils.py	/^def custom_exception_handler(exc, context):$/;"	kind:function	line:4
+customer	app/backend/models.py	/^    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)$/;"	kind:variable	line:41
+db	app/backend/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+db	app/backend/migrations/0004_inviteduser_promocode.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+deletion	app/backend/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+deletion	app/backend/migrations/0004_inviteduser_promocode.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+dependencies	app/backend/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
+dependencies	app/backend/migrations/0002_auto_20161208_1728.py	/^    dependencies = [$/;"	kind:variable	line:10
+dependencies	app/backend/migrations/0003_prizepoolitem.py	/^    dependencies = [$/;"	kind:variable	line:10
+dependencies	app/backend/migrations/0004_inviteduser_promocode.py	/^    dependencies = [$/;"	kind:variable	line:11
+description	app/backend/models.py	/^    description = models.CharField(max_length=256)$/;"	kind:variable	line:14
+django	app/backend/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+django	app/backend/migrations/0004_inviteduser_promocode.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+email	app/backend/models.py	/^    email = models.EmailField()$/;"	kind:variable	line:21
+email	app/backend/models.py	/^    email = models.EmailField(unique=True, db_index=True)$/;"	kind:variable	line:6
+email_hidden	app/backend/models.py	/^    def email_hidden(self):$/;"	kind:member	line:60
+exception_handler	app/djreact/utils.py	/^from rest_framework.views import exception_handler$/;"	kind:namespace	line:1
+execute_from_command_line	app/manage.py	/^    from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+fabfile.py	app/fabfile.py	1;"	kind:file	line:1
+field	app/backend/migrations/0002_auto_20161208_1728.py	/^            field=models.IntegerField(blank=True, default=0),$/;"	kind:variable	line:18
+fields	app/backend/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:19
+fields	app/backend/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:26
+fields	app/backend/migrations/0003_prizepoolitem.py	/^            fields=[$/;"	kind:variable	line:17
+fields	app/backend/migrations/0004_inviteduser_promocode.py	/^            fields=[$/;"	kind:variable	line:18
+fields	app/backend/migrations/0004_inviteduser_promocode.py	/^            fields=[$/;"	kind:variable	line:26
+fields	app/backend/serializers.py	/^        fields = ('email', )$/;"	kind:variable	line:11
+fields	app/backend/serializers.py	/^        fields = ('selected_descr', 'email_hidden')$/;"	kind:variable	line:25
+fields	app/backend/serializers.py	/^        fields = ('url', 'prize1', 'selected', 'prize2', 'customer', 'prize1_descr', 'prize2_descr')$/;"	kind:variable	line:18
+find_promo	app/backend/utils.py	/^def find_promo():$/;"	kind:function	line:91
+find_promo	app/backend/views.py	/^from .utils import find_promo$/;"	kind:namespace	line:16
+flake8	app/djreact/settings.py	/^    from .local_settings import *  # flake8: noqa$/;"	kind:namespace	line:165
+generic	app/djreact/urls.py	/^from django.views import generic$/;"	kind:namespace	line:18
+get_template	app/backend/signals.py	/^from django.template.loader import get_template$/;"	kind:namespace	line:5
+get_two_random_ids	app/backend/utils.py	/^    def get_two_random_ids(self):$/;"	kind:member	line:42
+get_two_unique_items	app/backend/utils.py	/^    def get_two_unique_items(self):$/;"	kind:member	line:46
+get_wsgi_application	app/djreact/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+gift_descr	app/backend/models.py	/^    def gift_descr(self):$/;"	kind:member	line:52
+include	app/djreact/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
+initial	app/backend/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
+list	app/backend/views.py	/^    def list(self, request):$/;"	kind:member	line:23
+local	app/fabfile.py	/^from fabric.api import local$/;"	kind:namespace	line:1
+local_settings.py	app/djreact/local_settings.py	1;"	kind:file	line:1
+manage.py	app/manage.py	1;"	kind:file	line:1
+migrations	app/backend/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+migrations	app/backend/migrations/0002_auto_20161208_1728.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+migrations	app/backend/migrations/0003_prizepoolitem.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+migrations	app/backend/migrations/0004_inviteduser_promocode.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+model	app/backend/serializers.py	/^        model = Customer$/;"	kind:variable	line:10
+model	app/backend/serializers.py	/^        model = GooseRoll$/;"	kind:variable	line:17
+model	app/backend/serializers.py	/^        model = GooseRoll$/;"	kind:variable	line:24
+model_name	app/backend/migrations/0002_auto_20161208_1728.py	/^            model_name='gooseroll',$/;"	kind:variable	line:16
+models	app/backend/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	app/backend/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+models	app/backend/migrations/0002_auto_20161208_1728.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	app/backend/migrations/0003_prizepoolitem.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	app/backend/migrations/0004_inviteduser_promocode.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	app/backend/migrations/0004_inviteduser_promocode.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+models	app/backend/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models.py	app/backend/models.py	1;"	kind:file	line:1
+name	app/backend/apps.py	/^    name = 'backend'$/;"	kind:variable	line:5
+name	app/backend/migrations/0001_initial.py	/^            name='Customer',$/;"	kind:variable	line:18
+name	app/backend/migrations/0001_initial.py	/^            name='GooseRoll',$/;"	kind:variable	line:25
+name	app/backend/migrations/0002_auto_20161208_1728.py	/^            name='selected',$/;"	kind:variable	line:17
+name	app/backend/migrations/0003_prizepoolitem.py	/^            name='PrizePoolItem',$/;"	kind:variable	line:16
+name	app/backend/migrations/0004_inviteduser_promocode.py	/^            name='InvitedUser',$/;"	kind:variable	line:17
+name	app/backend/migrations/0004_inviteduser_promocode.py	/^            name='PromoCode',$/;"	kind:variable	line:25
+namedtuple	app/djreact/settings.py	/^from collections import namedtuple$/;"	kind:namespace	line:190
+noqa	app/djreact/settings.py	/^    from .local_settings import *  # flake8: noqa$/;"	kind:namespace	line:165
+operations	app/backend/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:16
+operations	app/backend/migrations/0002_auto_20161208_1728.py	/^    operations = [$/;"	kind:variable	line:14
+operations	app/backend/migrations/0003_prizepoolitem.py	/^    operations = [$/;"	kind:variable	line:14
+operations	app/backend/migrations/0004_inviteduser_promocode.py	/^    operations = [$/;"	kind:variable	line:15
+os	app/djreact/local_settings.py	/^import os$/;"	kind:namespace	line:1
+os	app/djreact/settings.py	/^import os$/;"	kind:namespace	line:13
+os	app/djreact/wsgi.py	/^import os$/;"	kind:namespace	line:10
+os	app/manage.py	/^import os$/;"	kind:namespace	line:2
+owner	app/backend/models.py	/^    owner = models.ForeignKey(Customer, on_delete=models.CASCADE)$/;"	kind:variable	line:30
+pool_stat	app/backend/utils.py	/^    def pool_stat(self):$/;"	kind:member	line:54
+pop_one	app/backend/utils.py	/^    def pop_one(self, item):$/;"	kind:member	line:60
+post	app/backend/views.py	/^    def post(self, request, pk=None):$/;"	kind:member	line:36
+post_save	app/backend/signals.py	/^from django.db.models.signals import post_save, pre_save$/;"	kind:namespace	line:1
+pre_save	app/backend/signals.py	/^from django.db.models.signals import post_save, pre_save$/;"	kind:namespace	line:1
+prize	app/backend/models.py	/^    prize = models.IntegerField(db_index=True)$/;"	kind:variable	line:13
+prize1	app/backend/models.py	/^    prize1 = models.IntegerField()$/;"	kind:variable	line:39
+prize1_descr	app/backend/models.py	/^    def prize1_descr(self):$/;"	kind:member	line:44
+prize2	app/backend/models.py	/^    prize2 = models.IntegerField()$/;"	kind:variable	line:40
+prize2_descr	app/backend/models.py	/^    def prize2_descr(self):$/;"	kind:member	line:48
+prize_pool_list	app/backend/views.py	/^def prize_pool_list(request, format=None):$/;"	kind:function	line:72
+queryset	app/backend/views.py	/^    queryset = Customer.objects.all()$/;"	kind:variable	line:67
+queryset	app/backend/views.py	/^    queryset = GooseRoll.objects.all()$/;"	kind:variable	line:21
+random	app/backend/utils.py	/^import random$/;"	kind:namespace	line:1
+random	app/backend/views.py	/^import random$/;"	kind:namespace	line:1
+receiver	app/backend/signals.py	/^from django.dispatch import receiver$/;"	kind:namespace	line:2
+referrer	app/backend/models.py	/^    referrer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)$/;"	kind:variable	line:22
+retrieve	app/backend/views.py	/^    def retrieve(self, request, pk=None):$/;"	kind:member	line:28
+router	app/djreact/urls.py	/^router = routers.DefaultRouter()$/;"	kind:variable	line:23
+routers	app/djreact/urls.py	/^from rest_framework import routers$/;"	kind:namespace	line:20
+run	app/backend/utils.py	/^    def run(self):$/;"	kind:member	line:79
+s	app/backend/utils.py	/^from django.conf import settings as s$/;"	kind:namespace	line:6
+selected	app/backend/models.py	/^    selected = models.IntegerField(blank=True, default=0)  # 1 or 2, 0 == not selected$/;"	kind:variable	line:38
+selected_descr	app/backend/models.py	/^    def selected_descr(self):$/;"	kind:member	line:67
+selected_prize	app/backend/views.py	/^def selected_prize(request, format=None):$/;"	kind:function	line:117
+send_email_with_gift	app/backend/signals.py	/^def send_email_with_gift(sender, instance, *args, **kwargs):$/;"	kind:function	line:15
+send_email_with_invites	app/backend/signals.py	/^def send_email_with_invites(sender, instance, *args, **kwargs):$/;"	kind:function	line:29
+send_email_with_promo	app/backend/signals.py	/^def send_email_with_promo(sender, instance, *args, **kwargs):$/;"	kind:function	line:42
+send_html_mail	app/backend/signals.py	/^from .utils import PrizePool, send_html_mail$/;"	kind:namespace	line:3
+send_html_mail	app/backend/utils.py	/^def send_html_mail(subject, html_content, recipient_list):$/;"	kind:function	line:87
+send_html_mail	app/backend/views.py	/^                from .utils import send_html_mail$/;"	kind:namespace	line:52
+send_mail	app/backend/utils.py	/^from django.core.mail import EmailMessage, send_mail$/;"	kind:namespace	line:7
+send_queued_mail	app/djreact/wsgi.py	/^    def send_queued_mail(num):$/;"	kind:function	line:24
+serializer_class	app/backend/views.py	/^    serializer_class = CustomerSerializer$/;"	kind:variable	line:68
+serializer_class	app/backend/views.py	/^    serializer_class = GooseRollSerializer$/;"	kind:variable	line:20
+serializers	app/backend/serializers.py	/^from rest_framework import serializers$/;"	kind:namespace	line:2
+serializers.py	app/backend/serializers.py	1;"	kind:file	line:1
+settings	app/backend/models.py	/^from django.conf import settings$/;"	kind:namespace	line:2
+settings	app/backend/views.py	/^from django.conf import settings$/;"	kind:namespace	line:12
+settings.py	app/djreact/settings.py	1;"	kind:file	line:1
+signals.py	app/backend/signals.py	1;"	kind:file	line:1
+status	app/backend/views.py	/^from rest_framework import status$/;"	kind:namespace	line:6
+sys	app/manage.py	/^import sys$/;"	kind:namespace	line:3
+tests.py	app/backend/tests.py	1;"	kind:file	line:1
+threading	app/backend/utils.py	/^import threading$/;"	kind:namespace	line:2
+unicode_literals	app/backend/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+unicode_literals	app/backend/migrations/0002_auto_20161208_1728.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+unicode_literals	app/backend/migrations/0003_prizepoolitem.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+unicode_literals	app/backend/migrations/0004_inviteduser_promocode.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+update_prize_pool	app/backend/signals.py	/^def update_prize_pool(sender, instance, *args, **kwargs):$/;"	kind:function	line:10
+url	app/backend/models.py	/^    url = models.CharField(max_length=32, db_index=True)$/;"	kind:variable	line:37
+url	app/djreact/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
+urlpatterns	app/djreact/urls.py	/^urlpatterns = [$/;"	kind:variable	line:27
+urls.py	app/djreact/urls.py	1;"	kind:file	line:1
+utils.py	app/backend/utils.py	1;"	kind:file	line:1
+utils.py	app/djreact/utils.py	1;"	kind:file	line:1
+uwsgidecorators	app/djreact/wsgi.py	/^    import uwsgidecorators$/;"	kind:namespace	line:20
+views	app/djreact/urls.py	/^from backend import views$/;"	kind:namespace	line:21
+views.py	app/backend/views.py	1;"	kind:file	line:1
+viewsets	app/backend/views.py	/^from rest_framework import viewsets$/;"	kind:namespace	line:7
+webpack	app/fabfile.py	/^def webpack():$/;"	kind:function	line:4
+wsgi.py	app/djreact/wsgi.py	1;"	kind:file	line:1
