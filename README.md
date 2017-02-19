@@ -1,10 +1,15 @@
 Django + React boilerplate is taken from https://github.com/mbrochh/django-reactjs-boilerplate
 Django uWSGI Docker is taken from https://github.com/dockerfiles/django-uwsgi-nginx
 
+
+#HOW TO START LOCALY
+
 ```
+cd app
 mkvirtualenv --python=`which python3` toongoose
 pip install -r requirements.txt
 npm install
+mkdir database
 ./manage.py migrate
 ./manage.py runserver
 ```
