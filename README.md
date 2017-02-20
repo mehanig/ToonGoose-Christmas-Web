@@ -52,6 +52,14 @@ don't set any permissons, it's private by default
 Now create  Google Compute Engine using `startup-script.sh`
 
 
+##DEPLOYMENT TO DO
+
+- build localy
+- export image `docker export ba838e435f7e > ../toongoseNY_docker.tar`
+- upload image to DO
+- cat /home/toongoseNY_docker.tar | docker import - toongoseny:latest
+- run 
+
 ####Local run with uWSGI
 ```
 $VIRTUAL_ENV/bin/uwsgi --ini uwsgi.ini:local --virtualenv $VIRTUAL_ENV
