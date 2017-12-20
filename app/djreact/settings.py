@@ -201,5 +201,5 @@ PRIZES_PROB = [
     PrizeProb(35, None)
 ]
 
-with open(BASE_DIR + '/djreact/promocodes_fake.txt') as f:
+with open(BASE_DIR + '/djreact/promocodes.txt') as f:
     PROMOCODES_LIST = list(map(lambda x: x.strip(), f.readlines()))

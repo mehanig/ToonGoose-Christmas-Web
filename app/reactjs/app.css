@@ -20,6 +20,16 @@
     margin: 20px 0 20px 0;
 }
 
+.pop-up__first-help-button {
+    margin-top: 20px;
+    background: #8993da;
+    border-radius: 4px;
+}
+
+.pop-up__first-help-button:hover {
+    background: #99a1df;
+}
+
 .gooses__selector-main {
     display: flex;
     justify-content: center;
@@ -148,20 +158,28 @@
 }
 
 .goose-icon {
-    display: inline-block;
-    min-height: 150px;
-    min-width: 150px;
-    max-height: 150px;
-    max-width: 150px;
-    margin: 0 10px -10px 10px;
+    display: inline-flex;
+    position: relative;
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 300px;
+    max-width: 300px;
+    margin: 15px; 
     background-position: 50% 50%; /* Sets reference point to scale from */
     background-size: contain;
     background-repeat: no-repeat;
-    width: calc(100% * (1 / 7) - 10px - 1px);
+    /* width: calc(100% * (1 / 7) - 10px - 1px);     */
+}
+
+.goose-icon-inside {
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
 }
 
 .gooses__maxWidthContainer {
-    max-width: 1300px;
+    max-width: 1400px;
 }
 
 .goose-icon:hover {
@@ -241,48 +259,30 @@
 
 .goose-icon__num-16 {
     background-image: url('/static/img/gc/16.png');
-}
-
-.goose-icon__num-17 {
-    background-image: url('/static/img/gc/17.png');
-}
-
-.goose-icon__num-18 {
-    background-image: url('/static/img/gc/18.png');
-}
-
-.goose-icon__num-19 {
-    background-image: url('/static/img/gc/19.png');
-}
-
-.goose-icon__num-20 {
-    background-image: url('/static/img/gc/20.png');
-}
-
-.goose-icon__num-21 {
-    background-image: url('/static/img/gc/21.png');
-}
+}   
 
 .selected-square-1 {
     background-color: #f75555;
-    min-height: 120px;
-    min-width: 120px;
+    box-sizing: border-box;
+    position: absolute;
+    min-height: 320px;
+    min-width: 320px;
     width: calc(100% * (1 / 7) - 10px - 1px);
-    position: relative;
-    top: -145px;
-    left: 17px;
     z-index: -1;
+    left: -10px;
+    top: -10px;
 }
 
 .selected-square-2 {
     background-color: #698cf7;
-    min-height: 120px;
-    min-width: 120px;
+    box-sizing: border-box;
+    position: absolute;
+    min-height: 320px;
+    min-width: 320px;
     width: calc(100% * (1 / 7) - 10px - 1px);
-    position: relative;
-    top: -145px;
-    left: 17px;
     z-index: -1;
+    left: -10px;
+    top: -10px;
 }
 
 .selected-square-hidden {
@@ -299,14 +299,14 @@
 
 .selected-square-large {
     background-color: #f75555;
-    min-height: 200px;
-    min-width: 200px;
-    max-width: 200px;
-    max-height: 200px;
+    min-height: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    max-height: 320px;
     width: calc(100% * (1 / 7) - 10px - 1px);
-    position: relative;
-    top: -223px;
-    left: 22px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
     z-index: -1;
 }
 
@@ -362,10 +362,10 @@
 }
 
 .large-icon {
-    min-width: 250px;
-    min-height: 250px;
-    max-height: 250px;
-    max-width: 250px;
+    min-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    max-width: 300px;
 }
 
 .gift-bubble__main {

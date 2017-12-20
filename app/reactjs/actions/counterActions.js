@@ -13,12 +13,12 @@ export const SHARED_EMAILS_FAILED = "SHARED_EMAILS_FAILED";
 
 
 export function sendEmail(data) {
-    console.log(data);
+    // console.log(data);
     if (data.response) {
         return {type: EMAIL, data: data.response.data}
     }
     if (data.error) {
-        console.log(data.error);
+        // console.log(data.error);
         return {type: ERROR, data: data.error.response.data}
     }
 }
@@ -45,7 +45,7 @@ export function selectedPrize(data) {
     return {type: PRIZE_APPROVED, prize_id}
   }
   if (data.error) {
-    console.log(data.error);
+    // console.log(data.error);
     return {type: PRIZE_APPROVED_ERROR, data: data.error.response.data}
   }
 }

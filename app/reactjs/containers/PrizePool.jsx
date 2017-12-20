@@ -29,7 +29,7 @@ export default class PrizePool extends React.Component {
   componentWillMount() {
       let {dispatch, counters} = this.props;
       axios.get("/api/v1/prize-pool/").then(function (response) {
-          console.log(response.data);
+        //   console.log(response.data);
           this.setState({feed: response.data})
       }.bind(this)).catch(function (error) {
           dispatch(counterActions.rollReceived({error}));

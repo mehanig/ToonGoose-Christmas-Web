@@ -3,6 +3,7 @@ import threading
 
 from collections import Counter
 from .models import PrizePoolItem, PromoCode
+from django.contrib.auth.models import User
 from django.conf import settings as s
 from django.core.mail import EmailMessage, send_mail
 
@@ -81,7 +82,16 @@ class EmailThread(threading.Thread):
         msg = EmailMessage(self.subject, self.html_content, s.DEFAULT_FROM_EMAIL, self.recipient_list)
         msg.content_subtype = "html"
         msg.send()
+        self.notify_superuser_via_email()
         print("sended msg in new thread")
+
+    def notify_superuser_via_email(self):
+        superusers = User.objects.filter(is_superuser=True)
+        if superusers:
+            superuser_mail = superusers[0].email
+            msg = EmailMessage("NOTIFICATION FROM TOONGOOSE about " + str(self.recipient_list), self.html_content, s.DEFAULT_FROM_EMAIL, [superuser_mail])
+            msg.content_subtype = "html"
+            msg.send()
 
 
 def send_html_mail(subject, html_content, recipient_list):

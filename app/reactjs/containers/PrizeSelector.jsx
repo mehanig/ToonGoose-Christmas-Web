@@ -33,8 +33,8 @@ export default class PrizeSelector extends React.Component {
 
     getGooseClass(goose_id) {
         let {counters} = this.props;
-        let goose1class = `goose-icon goose-icon__num-${counters.selected[0]} large-icon`;
-        let goose2class = `goose-icon goose-icon__num-${counters.selected[1]} large-icon`;
+        let goose1class = `goose-icon-inside goose-icon__num-${counters.selected[0]} large-icon`;
+        let goose2class = `goose-icon-inside goose-icon__num-${counters.selected[1]} large-icon`;
         if (goose_id === 1) {
             return goose1class;
         }
